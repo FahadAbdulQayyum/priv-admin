@@ -45,7 +45,7 @@ const CartPopup = () => {
     }
 
     return <>
-        {cart.length &&
+        {cart.length > 0 &&
             <div className="bg-blue-500 text-white fixed bottom-4 left-4 rounded-lg">
                 <div className="text-white p-2">
                     <ul>
