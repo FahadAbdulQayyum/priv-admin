@@ -39,7 +39,7 @@ export default function RootLayout({
             </div>
             <Toaster />
             <CartPopup />
-            <Footer />
+            {/* <Footer /> */}
           </span>
         </Providers>
       </body>

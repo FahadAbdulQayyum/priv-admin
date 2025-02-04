@@ -10,12 +10,14 @@ import GearUp from '@/components/Gearup'
 import DontMiss from '@/components/DontMiss'
 import Essential from '@/components/Essential'
 import CategoryList from '@/components/CategoryList'
+import Admin from '@/components/Admin'
 
 
 const page = () => {
   return (
     <div>
-      <BendatApp />
+      <Admin />
+      {/* <BendatApp />
       <Hero />
       <FirstLook />
       <FlashSale />
@@ -23,7 +25,7 @@ const page = () => {
       <GearUp />
       <DontMiss />
       <Essential />
-      <CategoryList />
+      <CategoryList /> */}
     </div >
   )
 }
