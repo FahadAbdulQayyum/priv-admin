@@ -10,6 +10,15 @@ interface SignUp {
     firstname: string;
 }
 
+export interface dataType {
+    "name": string;
+    "city_available": string;
+    "selected_services_list": string[];
+    "agent_chosen": boolean;
+    "_createdAt": string;
+    "time": string;
+}
+
 interface DynamicAPI {
     _id: string;
     name: string;
@@ -17,6 +26,7 @@ interface DynamicAPI {
     city_available: string;
     price: number;
     currently_offered: boolean;
+    _createdAt?: string,
     pic: {
         asset: {
             _ref: string;
@@ -51,10 +61,21 @@ export const fetchDynamicAPIs = createAsyncThunk(
         specificFields: string[];
     }) => {
         const data = await client.fetch(`
-      *[_type == '${collectionType}']{
-        ${specificFields.join(",")}
+      *[_type == '${collectionType}']
+      {
+        ${specificFields}
       }
     `);
+        //     const data = await client.fetch(`
+        //   *[_type == '${collectionType}']
+        //   {
+        //     ${specificFields.join(",")}
+        //   }
+        // `);
+
+        // console.log('...data...', data);
+        // return data as dataType[];
+        // return data.payload as DynamicAPI[];
         return data as DynamicAPI[];
     }
 );
