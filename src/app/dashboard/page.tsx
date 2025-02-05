@@ -35,7 +35,7 @@ const Dashboard = () => {
     return (
         <div className="space-y-1 px-standardSize">
             {
-                data && data.map((v, i) => <div className="bg-gray-200 hover:bg-gray-300 p-2 rounded shadow">
+                data && data.map((v, i) => <div key={i} className="bg-gray-200 hover:bg-gray-300 p-2 rounded shadow">
                     <span className="flex items-center space-x-2">
                         <Image
                             // src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Faccount-icon-vector&psig=AOvVaw2xa2q7Kmakbe9RAGIfLLnW&ust=1738872681858000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOiC2turrYsDFQAAAAAdAAAAABAE" alt="logo"
@@ -47,7 +47,7 @@ const Dashboard = () => {
                         <span
                             className="flex flex-col space-y-1"
                         >
-                            <div key={i} className="text-sm">{v.name}</div>
+                            <div className="text-sm">{v.name}</div>
                             <div className="text-base">{v._createdAt}</div>
                         </span>
                     </span >
