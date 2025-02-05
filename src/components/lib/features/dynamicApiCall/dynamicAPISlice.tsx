@@ -20,7 +20,6 @@ export interface dataType {
 }
 
 interface DynamicAPI {
-    _key: string;
     _id: string;
     name: string;
     variation: string;
