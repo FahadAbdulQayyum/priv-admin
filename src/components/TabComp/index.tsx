@@ -24,19 +24,16 @@ export function TabComp() {
         // <Tabs defaultValue="account" className="w-[400px]">
         // <Tabs defaultValue="account" className="w-[400px] flex pt-44">
         // <Tabs defaultValue="account" className="w-[600px] flex">
-        <Tabs defaultValue="dashboard" className="flex px-standardSize">
+        <Tabs defaultValue="orders" className="flex px-standardSize">
             {/* <TabsList className="grid w-full grid-cols-2"> */}
             <TabsList className="flex flex-col space-y-5" >
-                <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
-                <TabsTrigger value="password">Password</TabsTrigger>
-
                 <TabsTrigger value="orders">Orders</TabsTrigger>
                 <TabsTrigger value="users">Users</TabsTrigger>
                 <TabsTrigger value="agents">Agents</TabsTrigger>
                 <TabsTrigger value="locations">Locations</TabsTrigger>
                 <TabsTrigger value="services">Services</TabsTrigger>
             </TabsList>
-            <TabsContent value="dashboard" className="pl-4">
+            <TabsContent value="orders" className="pl-4">
                 <Card>
                     <Dashboard
                         // type="job"
@@ -48,7 +45,7 @@ export function TabComp() {
                     />
                 </Card>
             </TabsContent>
-            <TabsContent value="password" className="pl-4">
+            <TabsContent value="users" className="pl-4">
                 <Card>
                     <Dashboard
                         type="job"
@@ -56,50 +53,12 @@ export function TabComp() {
                     />
                 </Card>
             </TabsContent>
-            <TabsContent value="orders" className="pl-4">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Password</CardTitle>
-                        <CardDescription>
-                            Change your password here. After saving, you&apos;ll be logged out.
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-2">
-                        <div className="space-y-1">
-                            <Label htmlFor="current">Current password</Label>
-                            <Input id="current" type="password" />
-                        </div>
-                        <div className="space-y-1">
-                            <Label htmlFor="new">New password</Label>
-                            <Input id="new" type="password" />
-                        </div>
-                    </CardContent>
-                    <CardFooter>
-                        <Button>Save password</Button>
-                    </CardFooter>
-                </Card>
-            </TabsContent>
             <TabsContent value="users" className="pl-4">
                 <Card>
-                    <CardHeader>
-                        <CardTitle>Password</CardTitle>
-                        <CardDescription>
-                            Change your password here. After saving, you&apos;ll be logged out.
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-2">
-                        <div className="space-y-1">
-                            <Label htmlFor="current">Current password</Label>
-                            <Input id="current" type="password" />
-                        </div>
-                        <div className="space-y-1">
-                            <Label htmlFor="new">New password</Label>
-                            <Input id="new" type="password" />
-                        </div>
-                    </CardContent>
-                    <CardFooter>
-                        <Button>Save password</Button>
-                    </CardFooter>
+                    <Dashboard
+                        type="job"
+                        definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
+                    />
                 </Card>
             </TabsContent>
             <TabsContent value="agents" className="pl-4">
