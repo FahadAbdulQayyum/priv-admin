@@ -7,7 +7,7 @@ import { RootState } from '@/components/lib/store';
 import { dataType, DynamicAPI, fetchDynamicAPIs } from '@/components/lib/features/dynamicApiCall/dynamicAPISlice';
 import Image from 'next/image';
 
-const Dashboard = () => {
+const Dashboard = ({ type, definedField }: { type: string, definedField: string[] }) => {
 
     // const [data, setData] = useState<dataType[]>([]);
     const [data, setData] = useState<DynamicAPI[]>([]);
@@ -21,9 +21,11 @@ const Dashboard = () => {
             setLoading(true)
             const api = await dispatch(
                 fetchDynamicAPIs({
-                    collectionType: "job", // Replace with your collection type
+                    // collectionType: "job", // Replace with your collection type
+                    collectionType: type, // Replace with your collection type
                     // specificFields: ["name", "variation", "currently_offered", "pic", "city_available", "price", "agent_chosen", "time"], // Replace with needed fields
-                    specificFields: ["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"], // Replace with needed fields
+                    // specificFields: ["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"], // Replace with needed fields
+                    specificFields: definedField, // Replace with needed fields
                 })
             )
             console.log('...api...', api.payload);
