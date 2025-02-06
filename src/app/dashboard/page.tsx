@@ -7,7 +7,6 @@ const DashboardPage = () => {
             <Dashboard
                 type="job"
                 definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
-
             />
         </div>
     )
