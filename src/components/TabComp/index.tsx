@@ -53,14 +53,6 @@ export function TabComp() {
                     />
                 </Card>
             </TabsContent>
-            <TabsContent value="users" className="pl-4">
-                <Card>
-                    <Dashboard
-                        type="job"
-                        definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
-                    />
-                </Card>
-            </TabsContent>
             <TabsContent value="agents" className="pl-4">
                 <Card>
                     <CardHeader>
