@@ -30,8 +30,8 @@ export function TabComp() {
                 <TabsTrigger value="orders">Orders</TabsTrigger>
                 <TabsTrigger value="users">Users</TabsTrigger>
                 <TabsTrigger value="agents">Agents</TabsTrigger>
-                <TabsTrigger value="locations">Locations</TabsTrigger>
-                <TabsTrigger value="services">Services</TabsTrigger>
+                <TabsTrigger value="location">Locations</TabsTrigger>
+                <TabsTrigger value="service">Services</TabsTrigger>
             </TabsList>
             <TabsContent value="orders" className="pl-4">
                 <Card>
@@ -63,35 +63,20 @@ export function TabComp() {
                     </Card>
                 </Card>
             </TabsContent>
-            <TabsContent value="locations" className="pl-4">
+            <TabsContent value="location" className="pl-4">
                 <Card>
-                <Dashboard
-                            type="locations"
-                            definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
-                        />
+                    <Dashboard
+                        type="location"
+                        definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
+                    />
                 </Card>
             </TabsContent>
-            <TabsContent value="services" className="pl-4">
+            <TabsContent value="service" className="pl-4">
                 <Card>
-                    <CardHeader>
-                        <CardTitle>Password</CardTitle>
-                        <CardDescription>
-                            Change your password here. After saving, you&apos;ll be logged out.
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-2">
-                        <div className="space-y-1">
-                            <Label htmlFor="current">Current password</Label>
-                            <Input id="current" type="password" />
-                        </div>
-                        <div className="space-y-1">
-                            <Label htmlFor="new">New password</Label>
-                            <Input id="new" type="password" />
-                        </div>
-                    </CardContent>
-                    <CardFooter>
-                        <Button>Save password</Button>
-                    </CardFooter>
+                    <Dashboard
+                        type="service"
+                        definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
+                    />
                 </Card>
             </TabsContent>
         </Tabs >
