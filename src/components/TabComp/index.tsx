@@ -65,25 +65,10 @@ export function TabComp() {
             </TabsContent>
             <TabsContent value="locations" className="pl-4">
                 <Card>
-                    <CardHeader>
-                        <CardTitle>Password</CardTitle>
-                        <CardDescription>
-                            Change your password here. After saving, you&apos;ll be logged out.
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-2">
-                        <div className="space-y-1">
-                            <Label htmlFor="current">Current password</Label>
-                            <Input id="current" type="password" />
-                        </div>
-                        <div className="space-y-1">
-                            <Label htmlFor="new">New password</Label>
-                            <Input id="new" type="password" />
-                        </div>
-                    </CardContent>
-                    <CardFooter>
-                        <Button>Save password</Button>
-                    </CardFooter>
+                <Dashboard
+                            type="locations"
+                            definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
+                        />
                 </Card>
             </TabsContent>
             <TabsContent value="services" className="pl-4">
