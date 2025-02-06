@@ -15,16 +15,19 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
+import { SidebarProvider, SidebarTrigger } from "../ui/sidebar"
+import { AppSidebar } from "../app-sidebar"
+import Dashboard from "../Dashboard"
 
 export function TabComp() {
     return (
         // <Tabs defaultValue="account" className="w-[400px]">
         // <Tabs defaultValue="account" className="w-[400px] flex pt-44">
         // <Tabs defaultValue="account" className="w-[600px] flex">
-        <Tabs defaultValue="account" className="flex px-standardSize">
+        <Tabs defaultValue="dashboard" className="flex px-standardSize">
             {/* <TabsList className="grid w-full grid-cols-2"> */}
             <TabsList className="flex flex-col space-y-5" >
-                <TabsTrigger value="account">Account</TabsTrigger>
+                <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
                 <TabsTrigger value="password">Password</TabsTrigger>
 
                 <TabsTrigger value="orders">Orders</TabsTrigger>
@@ -32,10 +35,19 @@ export function TabComp() {
                 <TabsTrigger value="agents">Agents</TabsTrigger>
                 <TabsTrigger value="locations">Locations</TabsTrigger>
                 <TabsTrigger value="services">Services</TabsTrigger>
-                <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
             </TabsList>
-            <TabsContent value="account" className="pl-4">
+            <TabsContent value="dashboard" className="pl-4">
                 <Card>
+                    <Dashboard />
+                    {/* <SidebarProvider
+                    >
+                        <AppSidebar />
+                        <main>
+                            <SidebarTrigger />
+                        </main>
+                    </SidebarProvider > */}
+                </Card>
+                {/* <Card>
                     <CardHeader>
                         <CardTitle>Account</CardTitle>
                         <CardDescription>
@@ -55,7 +67,7 @@ export function TabComp() {
                     <CardFooter>
                         <Button>Save changes</Button>
                     </CardFooter>
-                </Card>
+                </Card> */}
             </TabsContent>
             <TabsContent value="password" className="pl-4">
                 <Card>
@@ -173,29 +185,6 @@ export function TabComp() {
                 </Card>
             </TabsContent>
             <TabsContent value="services" className="pl-4">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Password</CardTitle>
-                        <CardDescription>
-                            Change your password here. After saving, you&apos;ll be logged out.
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-2">
-                        <div className="space-y-1">
-                            <Label htmlFor="current">Current password</Label>
-                            <Input id="current" type="password" />
-                        </div>
-                        <div className="space-y-1">
-                            <Label htmlFor="new">New password</Label>
-                            <Input id="new" type="password" />
-                        </div>
-                    </CardContent>
-                    <CardFooter>
-                        <Button>Save password</Button>
-                    </CardFooter>
-                </Card>
-            </TabsContent>
-            <TabsContent value="dashboard" className="pl-4">
                 <Card>
                     <CardHeader>
                         <CardTitle>Password</CardTitle>
