@@ -11,12 +11,14 @@ const Dashboard = () => {
 
     // const [data, setData] = useState<dataType[]>([]);
     const [data, setData] = useState<DynamicAPI[]>([]);
+    const [loading, setLoading] = useState(true);
     // const [data, setData] = useState([]);
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
         const apiResult = async () => {
+            setLoading(true)
             const api = await dispatch(
                 fetchDynamicAPIs({
                     collectionType: "job", // Replace with your collection type
@@ -27,10 +29,17 @@ const Dashboard = () => {
             console.log('...api...', api.payload);
             if (api.payload) {
                 setData(api.payload as DynamicAPI[]); // Ensure TypeScript knows it's an array
+                setLoading(false)
             }
         }
         apiResult();
     }, [])
+
+    if (loading) {
+        return <div className="flex justify-center items-center h-screen relative">
+            <div className="loader  border-t-2 border-b-2 border-blue-500 rounded-full w-6 h-6 animate-spin"></div>
+        </div>;
+    }
 
     return (
         <div
