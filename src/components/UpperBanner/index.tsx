@@ -92,8 +92,8 @@ const UpperBanner = () => {
             if (isFetched) {
                 if (userInfo) {
                     console.log("Redirecting to home...");
-                    await router.push("/");
-                    // await router.push(lastAttemptedRoute);
+                    // await router.push("/");
+                    await router.push(lastAttemptedRoute);
                 } else {
                     console.log("Redirecting to sign-in...");
                     await router.push("/Sign/In");
