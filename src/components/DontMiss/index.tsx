@@ -12,6 +12,7 @@ const DontMiss: React.FC = () => {
                     layout="fill" // Makes the image fill its parent container
                     objectFit="cover" // Ensures the image covers the container
                     priority // Ensures the hero image is loaded quickly
+
                 />
             </div>
             <div className="flex flex-col items-center space-y-3 pt-6">

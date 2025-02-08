@@ -80,6 +80,8 @@ export function CarouselImage({ flash, essential, data }: CarouselImageProps) {
                                                     alt={item.title || "alt"}
                                                     width={50}
                                                     height={50}
+                                                    unoptimized={true} // Disable optimization
+
                                                 />
                                                 <p className="text-sm ml-5">{item.title}</p>
                                             </div>
@@ -96,6 +98,8 @@ export function CarouselImage({ flash, essential, data }: CarouselImageProps) {
                                                 width={400}
                                                 height={400}
                                                 className="max-w-full md:max-w-md lg:max-w-lg"
+                                                unoptimized={true} // Disable optimization
+
                                             />
                                         </div>
                                     </CardContent>
@@ -118,6 +122,8 @@ export function CarouselImage({ flash, essential, data }: CarouselImageProps) {
                                             width={400}
                                             height={300}
                                             className="z-10 max-w-full h-auto"
+                                            unoptimized={true} // Disable optimization
+
                                         />
                                     </div>
                                     <div className="flex flex-col space-y-2 mt-4 w-full">

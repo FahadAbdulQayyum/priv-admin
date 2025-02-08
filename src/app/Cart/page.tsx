@@ -31,6 +31,7 @@ const Cart = () => {
                                         width={150}
                                         height={150}
                                         className="bg-primaryy"
+                                        unoptimized={true} // Disable optimization
                                     />
                                 </div>
                                 <div className="w-full md:w-[50%] space-y-2">
@@ -102,6 +103,8 @@ const Cart = () => {
                                 width={400}
                                 height={300}
                                 className="z-10"
+                                unoptimized={true} // Disable optimization
+
                             />
                         </div>
                         <div className="flex flex-col mt-4 w-full">

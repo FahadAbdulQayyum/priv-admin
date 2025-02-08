@@ -236,7 +236,10 @@ const CheckoutComponent = ({ btn }: { btn: string }) => {
                             <div className="flex">
                                 <Image
                                     src={urlFor(v?.pic)?.url()}
-                                    alt="Bendat" width={120} height={120} className="bg-transparent" />
+                                    alt="Bendat" width={120} height={120} className="bg-transparent" 
+                                    unoptimized={true} // Disable optimization
+
+                                    />
                                 <div className="ml-2">
                                     {/* <p className="text-sm">Bendat Dri-FIT ADV TechK qnit Ultra Men&apos;s Short-Sleeve Running Top</p> */}
                                     <p className="text-sm">{v.name}</p>
@@ -300,37 +303,48 @@ const CheckoutComponent = ({ btn }: { btn: string }) => {
                 <div>
                     <ul className="flex flex-col md:flex-row justify-center md:space-x-1 space-y-2 md:space-y-0 text-sm items-center text-gray-400 py-2 md:py-0">
                         <li>
-                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40} />
+                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40}   unoptimized={true} // Disable optimization
+ />
                         </li>
                         <li>
-                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40} />
+                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40}   unoptimized={true} // Disable optimization
+ />
                         </li>
                         <li>
-                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40} />
+                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40}   unoptimized={true} // Disable optimization
+ />
                         </li>
                         <li>
-                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40} />
+                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40}   unoptimized={true} // Disable optimization
+ />
                         </li>
                         <li>
-                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40} />
+                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40}   unoptimized={true} // Disable optimization
+ />
                         </li>
                         <li>
-                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40} />
+                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40}   unoptimized={true} // Disable optimization
+ />
                         </li>
                         <li>
-                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40} />
+                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40}   unoptimized={true} // Disable optimization
+ />
                         </li>
                         <li>
-                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40} />
+                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40}   unoptimized={true} // Disable optimization
+ />
                         </li>
                         <li>
-                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40} />
+                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40}   unoptimized={true} // Disable optimization
+ />
                         </li>
                         <li>
-                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40} />
+                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40}   unoptimized={true} // Disable optimization
+ />
                         </li>
                         <li>
-                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40} />
+                            <Image src={"/assets/visa.svg"} alt="visa card" width={40} height={40}   unoptimized={true} // Disable optimization
+ />
                         </li>
                     </ul>
                 </div>

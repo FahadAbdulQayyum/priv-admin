@@ -36,6 +36,8 @@ const ProductDetail: React.FC = () => {
           width={550}
           height={550}
           className="bg-primaryy max-w-full"
+          unoptimized={true} // Disable optimization
+
         />
       </div>
 

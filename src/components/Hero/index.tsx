@@ -42,6 +42,8 @@ const Hero: React.FC = () => {
                 priority
                 className="object-center" // Optionally center the image
                 loading="eager" // Ensures faster loading
+                unoptimized={true} // Disable optimization
+
             />
 
             {/* Overlay content */}

@@ -187,7 +187,8 @@ const Sign: React.FC<SignProps> = ({ signup }) => {
     return (
         <form onSubmit={sendToForm}>
             <div className="flex flex-col justify-center items-center space-y-5 p-standardSize">
-                <Image src="/assets/bg.png" alt="logo" width={100} height={100} />
+                <Image src="/assets/bg.png" alt="logo" width={100} height={100} unoptimized={true} // Disable optimization
+                />
                 <h1 className={`font-bold text-xl text-center ${!signup ? 'w-[21%]' : 'w-full'}`}>{signup ? "BECOME A Bendat MEMBER" : "YOUR ACCOUNT FOR EVERYTHING Bendat"}</h1>
                 {
                     signup && <p className="text-sm text-gray-400 text-center max-w-xs mx-auto">

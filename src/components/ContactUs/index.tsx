@@ -87,7 +87,10 @@ const ContactUsComponent = () => {
                 <div className="flex flex-col space-y-4">
                     {data?.map((v, i) =>
                         <div key={i} className="flex flex-col items-center space-y-2 py-2 text-center">
-                            <Image src={v.icon} alt={v.contact} width={50} height={50} />
+                            <Image src={v.icon} alt={v.contact} width={50} height={50}
+                                unoptimized={true} // Disable optimization
+
+                            />
                             <span className="m-0 py-2">
                                 <p className="font-bold">{v.contact}</p>
                                 <p className="w-[271px]">{v.desc}</p>

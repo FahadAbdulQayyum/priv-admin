@@ -12,6 +12,8 @@ const Featured: React.FC = () => {
                     layout="fill" // Makes the image fill its parent container
                     objectFit="cover" // Ensures the image covers the container
                     priority // Ensures the hero image is loaded quickly
+                    unoptimized={true} // Disable optimization
+
                 />
             </div>
             <div className="flex flex-col items-center space-y-5 pt-10">

@@ -133,6 +133,8 @@ const FetchingSanityDataById = () => {
                 width={120}
                 height={120}
                 className="w-full h-48 object-cover mb-4"
+                unoptimized={true} // Disable optimization
+
               />
               <h2 className="text-xl font-semibold mb-2">{service.name}</h2>
               <p className="text-gray-700 mb-1">{service.variation}</p>
