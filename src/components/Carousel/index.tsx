@@ -154,6 +154,8 @@ export function CarouselImage({ flash, essential, data }: CarouselImageProps) {
                                             layout="fill"
                                             objectFit="cover"
                                             className="z-0 group-hover:opacity-80 transition duration-300"
+                                            unoptimized={true} // Disable optimization
+
                                         />
                                         <span className="absolute bottom-5 left-5 bg-white text-sm font-medium p-2 px-4 rounded-full">
                                             {item.category}

@@ -448,6 +448,8 @@ const Products = () => {
                                     width={500}
                                     height={500}
                                     className="rounded-md"
+                                    unoptimized={true} // Disable optimization
+
                                 />
                             </div>
                             <div className="mt-4">

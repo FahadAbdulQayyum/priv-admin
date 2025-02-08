@@ -57,7 +57,10 @@ const Dashboard = ({ type, definedField }: { type: string, definedField: string[
                             // src="/assets/account.webp"
                             alt="logo"
                             width={30}
-                            height={30} />
+                            height={30}
+                            unoptimized={true} // Disable optimization
+
+                        />
                         <span
                             className="flex flex-col space-y-1"
                         >
