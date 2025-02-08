@@ -169,9 +169,9 @@ const Sign: React.FC<SignProps> = ({ signup }) => {
                         title: "Successfully!",
                         description: resp.msg
                     })
-                setLoading(false)
                 dispatch(initializeUserInfo(resp.data[0]));
                 await router.push('/')
+                setLoading(false)
                 // router.push('/dashboard')
             } catch (err) {
                 console.error('Fetch error:', err)
