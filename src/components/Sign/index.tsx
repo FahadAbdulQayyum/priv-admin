@@ -115,7 +115,8 @@ const Sign: React.FC<SignProps> = ({ signup }) => {
                 }
 
                 setLoading(false);
-                await router.push('/Sign/In')
+                // await router.push('/Sign/In')
+                router.push('/dashboard')
             } catch (err) {
                 console.error('Fetch error:', err)
             }
@@ -124,8 +125,10 @@ const Sign: React.FC<SignProps> = ({ signup }) => {
                 const formDataForSignIn = { email: formData.email, password: formData.password }
                 // const response = await fetch('http://localhost:3000/api/signin', { method: 'POST', headers: { 'Content-Type': 'appliction/json' }, body: JSON.stringify(formDataForSignIn) })
                 // const response = await fetch(`${process.env.URL}/api/signin`, { method: 'POST', headers: { 'Content-Type': 'appliction/json' }, body: JSON.stringify(formDataForSignIn) })
-                const response = await fetch(`/api/signin`, { method: 'POST', headers: { 'Content-Type': 'appliction/json' }, body: JSON.stringify(formDataForSignIn) })
+                const response = await fetch(`/api/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formDataForSignIn) })
+                // const response = await fetch(`/afpi/signin`, { method: 'POST', headers: { 'Content-Type': 'appliction/json' }, body: JSON.stringify(formDataForSignIn) })
                 // const response = await fetch(`${URL}/api/signin`, { method: 'POST', headers: { 'Content-Type': 'appliction/json' }, body: JSON.stringify(formDataForSignIn) })
+                console.log('...responsy...', response)
                 if (!response.ok) {
                     const error = await response.json();
                     console.error('Error:', error.error || 'Something went wrong');
@@ -150,6 +153,7 @@ const Sign: React.FC<SignProps> = ({ signup }) => {
                     return;
                 }
                 const resp = await response.json();
+                console.log('...resp...', resp)
                 if (!resp.success) {
                     toast(
                         {
@@ -168,6 +172,7 @@ const Sign: React.FC<SignProps> = ({ signup }) => {
                 setLoading(false)
                 dispatch(initializeUserInfo(resp.data[0]));
                 await router.push('/')
+                // router.push('/dashboard')
             } catch (err) {
                 console.error('Fetch error:', err)
                 setLoading(false)
