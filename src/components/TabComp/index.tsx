@@ -80,7 +80,7 @@ export function TabComp() {
                     />
                 </Card>
             </TabsContent>
-            <TabsContent value="jobs" className="pl-4">
+            <TabsContent value="jobs" className="pl-4 mt-6">
                 <Card>
                     <Button>Reassign Job</Button>
                     <Button>Agent Cancel</Button>
