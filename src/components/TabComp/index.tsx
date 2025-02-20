@@ -32,6 +32,7 @@ export function TabComp() {
                 <TabsTrigger value="agents">Agents</TabsTrigger>
                 <TabsTrigger value="location">Locations</TabsTrigger>
                 <TabsTrigger value="service">Services</TabsTrigger>
+                <TabsTrigger value="jos">Jobs</TabsTrigger>
             </TabsList>
             <TabsContent value="orders" className="pl-4">
                 <Card>
@@ -77,6 +78,18 @@ export function TabComp() {
                         type="service"
                         definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
                     />
+                </Card>
+            </TabsContent>
+            <TabsContent value="jobs" className="pl-4">
+                <Card>
+                    <Button>Reassign Job</Button>
+                    <Button>Agent Cancel</Button>
+                    <Button>Agent Cancel w FMAP</Button>
+                    <Button>Client Cancel</Button>
+                    <Button>CS Cancel</Button>
+                    <Button>Make Note</Button>
+                    <Button>Make FMAP</Button>
+                    <Button>Client Communication</Button>
                 </Card>
             </TabsContent>
         </Tabs >
