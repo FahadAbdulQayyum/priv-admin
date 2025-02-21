@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import {
     Card,
     CardContent,
@@ -18,6 +17,7 @@ import {
 import { SidebarProvider, SidebarTrigger } from "../ui/sidebar"
 import { AppSidebar } from "../app-sidebar"
 import Dashboard from "../Dashboard"
+import Job from "../Job"
 
 export function TabComp() {
     return (
@@ -32,7 +32,7 @@ export function TabComp() {
                 <TabsTrigger value="agents">Agents</TabsTrigger>
                 <TabsTrigger value="location">Locations</TabsTrigger>
                 <TabsTrigger value="service">Services</TabsTrigger>
-                <TabsTrigger value="jos">Jobs</TabsTrigger>
+                <TabsTrigger value="jobs">Jobs</TabsTrigger>
             </TabsList>
             <TabsContent value="orders" className="pl-4">
                 <Card>
@@ -80,8 +80,11 @@ export function TabComp() {
                     />
                 </Card>
             </TabsContent>
-            <TabsContent value="jobs" className="pl-4 pt-6">
-                {/* <Card> */}
+            <TabsContent value="jobs" className="pl-4">
+                <Card>
+                    <Job />
+                    {/* <span className="bg-orange-400">
+                    <h1>Hello</h1>
                     <Button>Reassign Job</Button>
                     <Button>Agent Cancel</Button>
                     <Button>Agent Cancel w FMAP</Button>
@@ -90,7 +93,8 @@ export function TabComp() {
                     <Button>Make Note</Button>
                     <Button>Make FMAP</Button>
                     <Button>Client Communication</Button>
-                {/* </Card> */}
+                </span> */}
+                </Card>
             </TabsContent>
         </Tabs >
     )
