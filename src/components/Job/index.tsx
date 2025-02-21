@@ -7,10 +7,13 @@ import { RootState } from '@/components/lib/store';
 import { dataType, DynamicAPI, fetchDynamicAPIs } from '@/components/lib/features/dynamicApiCall/dynamicAPISlice';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
+import { Separator } from '@/components/ui/separator';
 
 const Job = () => {
     return (
-        <div className="flex space-x-1 overflow-hidden overflow-x-auto scrollbar-hide">
+        <div
+            className="flex space-x-3 bg-white overflow-hidden overflow-x-auto scrollbar-hide p-2 items-stretch"
+        >
             <div className="flex flex-col space-y-1">
                 <Button>Reassign Job</Button>
                 <Button>Agent Cancel</Button>
@@ -21,6 +24,9 @@ const Job = () => {
                 <Button>Make FMAP</Button>
                 <Button>Client Communication</Button>
             </div>
+
+            <Separator orientation="vertical" />
+
             <div className="flex flex-col space-y-1 items-center">
                 <p>Svcs:$180</p>
                 <p>Est Tip: $30</p>
@@ -32,6 +38,9 @@ const Job = () => {
                 <p>Payout: $144</p>
                 <Button>Change Price</Button>
             </div>
+
+            <Separator orientation="vertical" />
+
             <div className="flex flex-col space-y-1 items-center">
                 <p>Ava DeSena</p>
                 <p>643 345 4456</p>
@@ -39,6 +48,11 @@ const Job = () => {
                 <Button>Credit Client</Button>
                 <Button>Change Client</Button>
             </div>
+
+            <Separator orientation="vertical" />
+
+            {/* <div className="flex h-full items-stretch"> */}
+
             <div className="flex flex-col space-y-1 items-center">
                 <p>jillianocasio@me.com</p>
                 <p>female</p>
@@ -53,6 +67,9 @@ const Job = () => {
                 <p className="text-red-500 text-sm">WAS CANCELLED BY ORIGINAL PRO</p>
                 <p>Requested Agent: Find Me a Pro</p>
             </div>
+
+            <Separator orientation="vertical" />
+
             <div className="flex flex-col space-y-1 items-center">
                 <p>February 21 2025 8:30 AM</p>
                 <label>Change Day:</label>
@@ -75,11 +92,19 @@ const Job = () => {
                 </select>
                 <Button>Get Available Times</Button>
             </div>
+
+            {/* </div> */}
+
+            <Separator orientation="vertical" />
+
             <div className="flex flex-col space-y-1 items-center">
                 <p>1 Grand Cypress Blvd Orlando FL 32836 undefined</p>
                 <Button>Change Addr</Button>
                 <Button>Block User</Button>
             </div>
+
+            <Separator orientation="vertical" />
+
             <div className="flex flex-col space-y-1 items-center">
                 <label>Service Add On</label>
                 <input className="border p-1 rounded" />
