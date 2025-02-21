@@ -83,18 +83,9 @@ export function TabComp() {
             <TabsContent value="jobs" className="pl-4">
                 <Card>
                     <Job />
+                </Card>
+                <Card>
                     <Job />
-                    {/* <span className="bg-orange-400">
-                    <h1>Hello</h1>
-                    <Button>Reassign Job</Button>
-                    <Button>Agent Cancel</Button>
-                    <Button>Agent Cancel w FMAP</Button>
-                    <Button>Client Cancel</Button>
-                    <Button>CS Cancel</Button>
-                    <Button>Make Note</Button>
-                    <Button>Make FMAP</Button>
-                    <Button>Client Communication</Button>
-                </span> */}
                 </Card>
             </TabsContent>
         </Tabs >
