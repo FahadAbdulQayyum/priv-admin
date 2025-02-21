@@ -80,7 +80,7 @@ export function TabComp() {
                     />
                 </Card>
             </TabsContent>
-            <TabsContent value="jobs" className="pl-4">
+            <TabsContent value="jobs" className="pl-4 space-y-1">
                 <Card>
                     <Job />
                 </Card>
