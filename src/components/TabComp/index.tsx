@@ -81,7 +81,7 @@ export function TabComp() {
                 </Card>
             </TabsContent>
             <TabsContent value="jobs" className="pl-4 pt-6">
-                <Card>
+                {/* <Card> */}
                     <Button>Reassign Job</Button>
                     <Button>Agent Cancel</Button>
                     <Button>Agent Cancel w FMAP</Button>
@@ -90,7 +90,7 @@ export function TabComp() {
                     <Button>Make Note</Button>
                     <Button>Make FMAP</Button>
                     <Button>Client Communication</Button>
-                </Card>
+                {/* </Card> */}
             </TabsContent>
         </Tabs >
     )
