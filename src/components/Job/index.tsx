@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import { IdCard, BadgeDollarSign, FileUser, ContactRound, Clock, Fan, MapPin, TimerReset, Building2, Phone, AtSign, Venus } from 'lucide-react'
+import { IdCard, BadgeDollarSign, FileUser, ContactRound, Clock, Fan, MapPin, TimerReset, Building2, Phone, AtSign } from 'lucide-react'
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "@/components/lib/hooks";
 import { RootState } from '@/components/lib/store';
@@ -61,7 +61,7 @@ const Job = () => {
                 <h1 className="flex justify-center items-center space-x-1 shadow mb-2 font-bold text-center w-full"><ContactRound size={18} /><p>Agent</p></h1>
                 <p className="flex space-x-1"><AtSign size={20} /><small>jillianocasio@me.com</small></p>
                 <p className="flex space-x-1"><Phone size={20} /><small>455 664 9322</small></p>
-                <p className="flex space-x-1"><Venus size={20} /><small>female</small></p>
+                <p className="flex space-x-1"><IdCard size={20} /><small>female</small></p>
                 <Image
                     src="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5cf6faaa5c883cc930bb0dca-profilePic/1711243961568.jpeg"
                     alt="pro-profile-img"

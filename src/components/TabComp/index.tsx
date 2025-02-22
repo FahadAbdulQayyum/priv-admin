@@ -21,11 +21,7 @@ import Job from "../Job"
 
 export function TabComp() {
     return (
-        // <Tabs defaultValue="account" className="w-[400px]">
-        // <Tabs defaultValue="account" className="w-[400px] flex pt-44">
-        // <Tabs defaultValue="account" className="w-[600px] flex">
-        <Tabs defaultValue="orders" className="flex px-standardSize">
-            {/* <TabsList className="grid w-full grid-cols-2"> */}
+        <Tabs defaultValue="jobs" className="flex px-standardSize">
             <TabsList className="flex flex-col space-y-5" >
                 <TabsTrigger value="jobs">Jobs</TabsTrigger>
             </TabsList>
