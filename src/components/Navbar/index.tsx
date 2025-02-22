@@ -69,12 +69,12 @@ const Navbar: React.FC = () => {
                     } absolute lg:static top-full left-0 lg:flex lg:items-center lg:space-x-10 w-full bg-white lg:bg-transparent shadow-lg lg:shadow-none lg:w-auto z-50`}
             >
                 <ul className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-10 px-4 lg:px-0 py-4 lg:py-0 font-medium cursor-pointer">
-                    <li className="hover:border-b-2 hover:border-secondaryy h-7">Orders</li>
-                    <li className="hover:border-b-2 hover:border-secondaryy h-7">Users</li>
-                    <li className="hover:border-b-2 hover:border-secondaryy h-7">Agents</li>
-                    <li className="hover:border-b-2 hover:border-secondaryy h-7">Location</li>
+                    <li className="hover:border-b-2 hover:border-secondaryy h-7">Manual Payment</li>
+                    <li className="hover:border-b-2 hover:border-secondaryy h-7">Agents List</li>
+                    <li className="hover:border-b-2 hover:border-secondaryy h-7">Clients List</li>
+                    <li className="hover:border-b-2 hover:border-secondaryy h-7">Job Lists</li>
                     <li className="hover:border-b-2 hover:border-secondaryy h-7">
-                        <Link href="/services">Services</Link>
+                        <Link href="/services">Job</Link>
                     </li>
                 </ul>
             </nav>
