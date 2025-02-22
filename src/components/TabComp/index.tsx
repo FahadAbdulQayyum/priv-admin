@@ -27,59 +27,8 @@ export function TabComp() {
         <Tabs defaultValue="orders" className="flex px-standardSize">
             {/* <TabsList className="grid w-full grid-cols-2"> */}
             <TabsList className="flex flex-col space-y-5" >
-                <TabsTrigger value="orders">Orders</TabsTrigger>
-                <TabsTrigger value="users">Users</TabsTrigger>
-                <TabsTrigger value="agents">Agents</TabsTrigger>
-                <TabsTrigger value="location">Locations</TabsTrigger>
-                <TabsTrigger value="service">Services</TabsTrigger>
                 <TabsTrigger value="jobs">Jobs</TabsTrigger>
             </TabsList>
-            <TabsContent value="orders" className="pl-4">
-                <Card>
-                    <Dashboard
-                        // type="job"
-                        // definedField='["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]'
-
-                        type="job"
-                        definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
-
-                    />
-                </Card>
-            </TabsContent>
-            <TabsContent value="users" className="pl-4">
-                <Card>
-                    <Dashboard
-                        type="job"
-                        definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
-                    />
-                </Card>
-            </TabsContent>
-            <TabsContent value="agents" className="pl-4">
-                <Card>
-                    <Card>
-                        <Dashboard
-                            type="agent"
-                            definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
-                        />
-                    </Card>
-                </Card>
-            </TabsContent>
-            <TabsContent value="location" className="pl-4">
-                <Card>
-                    <Dashboard
-                        type="location"
-                        definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
-                    />
-                </Card>
-            </TabsContent>
-            <TabsContent value="service" className="pl-4">
-                <Card>
-                    <Dashboard
-                        type="service"
-                        definedField={["_id", "name", "city_available", "selected_services_list", "agent_chosen", "_createdAt", "time"]}
-                    />
-                </Card>
-            </TabsContent>
             <TabsContent value="jobs" className="pl-4 space-y-1">
                 <Card>
                     <Job />
