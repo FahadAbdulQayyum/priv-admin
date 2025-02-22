@@ -117,6 +117,21 @@ const Job = () => {
                 <label>Offer Bonus</label>
                 <input className="border p-1 rounded" />
             </div>
+
+            <Separator orientation="vertical" />
+
+            <div className="flex flex-col space-y-1 items-center">
+                <p>stillConfirmingPro:</p>
+                <p>2/22/2025, 3:17:51 PM</p>
+            </div>
+
+            <Separator orientation="vertical" />
+
+            <div className="flex flex-col space-y-1 items-center">
+                <p>Washington</p>
+                <p>DC</p>
+            </div>
+
         </div>
     )
 }
