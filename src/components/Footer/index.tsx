@@ -48,7 +48,7 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row items-center md:space-x-5">
                     <span className="flex items-center space-x-2">
                         <IoLocationOutline />
-                        <p>Karachi, Pakistan</p>
+                        <p>Texas, USA</p>
                     </span>
                     <span>© 2025 PRIV, Inc. All Rights Reserved</span>
                 </div>
