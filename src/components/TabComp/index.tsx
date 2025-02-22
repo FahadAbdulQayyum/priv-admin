@@ -22,10 +22,13 @@ export function TabComp() {
             {/* Main Tabs */}
             <div className="flex flex-col">
                 <TabsList className="flex flex-col space-y-5">
-                    <TabsTrigger value="jobs">Jobs</TabsTrigger>
+                    <TabsTrigger value="jobs">Jobs List</TabsTrigger>
                 </TabsList>
                 <TabsList className="flex flex-col space-y-5">
-                    <TabsTrigger value="jobs1">Jobs1</TabsTrigger>
+                    <TabsTrigger value="jobs1">Clients List</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5">
+                    <TabsTrigger value="agent">Agents List</TabsTrigger>
                 </TabsList>
             </div>
 
@@ -34,8 +37,10 @@ export function TabComp() {
                 <Tabs defaultValue="past-jobs">
                     {/* Nested Tabs */}
                     <TabsList className="flex space-x-5 mb-4 w-full">
-                        <TabsTrigger value="past-jobs">Past Jobs</TabsTrigger>
-                        <TabsTrigger value="future-jobs">Future Jobs</TabsTrigger>
+                        <TabsTrigger value="past-jobs">Today's Jobs (195)</TabsTrigger>
+                        <TabsTrigger value="future-jobs">Tomorrow's Jobs (44)</TabsTrigger>
+                        <TabsTrigger value="yesterday-jobs">Yesterday's Jobs (44)</TabsTrigger>
+                        <TabsTrigger value="cant-find-jobs">Can't find job?</TabsTrigger>
                     </TabsList>
 
                     {/* Nested Tabs Content */}
