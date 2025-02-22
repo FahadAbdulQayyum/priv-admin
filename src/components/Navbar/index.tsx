@@ -44,7 +44,13 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center px-2 text-black bg-white border-b-2 py-2 md:px-standardSize sm:px-4">
             {/* Logo Section */}
             <div className="logo">
-                <Image src="/assets/bg.png" alt="bendat Logo" width={80} height={80} unoptimized={true} // Disable optimization
+                <Image
+                    // src="/assets/bg.png" 
+                    src="https://priv-image-assets.s3.amazonaws.com/nwb/Logo_dark.svg"
+                    alt="bendat Logo"
+                    width={80}
+                    height={80}
+                    unoptimized={true} // Disable optimization
                 />
             </div>
 
