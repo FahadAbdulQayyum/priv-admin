@@ -10,7 +10,53 @@ import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Separator } from '@/components/ui/separator';
 
-const Job = () => {
+
+interface JobProps {
+    svcs?: string;
+    payout?: string;
+    clientname?: string;
+    clientphone?: string;
+    clientemail?: string;
+    proemail?: string;
+    proephone?: string; // Fixed from "proephone" (typo in your usage)
+    gender?: string;
+    proimage?: string; // Optional image prop
+}
+
+const Job: React.FC<JobProps> = ({
+    svcs = "$180",
+    payout = "$144",
+    clientname = "Ava Desena",
+    clientphone = "543 554 9821",
+    clientemail = "adsena88@gmail.com",
+    proemail = "jillianocasio@me.com",
+    proephone = "456 8993 234",
+    gender = "female",
+    proimage = "https://via.placeholder.com/150", // Default placeholder image
+}) => {
+
+    // const job = (
+    //     svcs = "$180",
+    //     payout = "$144",
+    //     clientname = "Ava Desena",
+    //     clientphone = "543 554 9821",
+    //     clientemail = "adsena88@gmail.com",
+    //     proemail = "jillianocasio@me.com",
+    //     prophone = "456 8993 234",
+    //     gender = "female",
+    //     proimg = "http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5cf6faaa5c883cc930bb0dca-profilePic/1711243961568.jpeg"
+
+    // ): {
+    //     svcs: "string"
+    //     payout: "string"
+    //     clientname: "string"
+    //     clientphone: "string"
+    //     clientemail: "string"
+    //     proemail: "string"
+    //     prophone: "string"
+    //     gender: "string"
+    // } => {
+    // const Job = () => {
     return (
         <div
             className="flex space-x-3 bg-white overflow-hidden overflow-x-auto scrollbar-hide p-2 items-stretch"
@@ -31,14 +77,14 @@ const Job = () => {
 
             <div className="flex flex-col space-y-1 items-center">
                 <h1 className="flex justify-center items-center space-x-1 shadow mb-2 font-bold text-center w-full"><BadgeDollarSign size={18} /><p>Price</p></h1>
-                <p>Svcs:$180</p>
+                <p>Svcs:{svcs}</p>
                 <p>Est Tip: $30</p>
                 <p>Est PF: $24</p>
                 <p>Act Tip: $0</p>
                 <p>Act PF: $0</p>
                 <p>Tax: $0</p>
                 <p>Travel: $0</p>
-                <p>Payout: $144</p>
+                <p>Payout: {payout}</p>
                 <Button>Change Price</Button>
             </div>
 
@@ -46,9 +92,10 @@ const Job = () => {
 
             <div className="flex flex-col space-y-1 items-center">
                 <h1 className="flex justify-center items-center space-x-1 shadow mb-2 font-bold text-center w-full"><FileUser size={18} /><p>Client</p></h1>
-                <p className="flex space-x-1"><IdCard size={20} /><small>Ava DeSena</small></p>
-                <p className="flex space-x-1"><Phone size={20} /><small>643 345 4456</small></p>
-                <p className="flex space-x-1"><AtSign size={20} /><small>adsena88@gmail.com</small></p>
+
+                <p className="flex space-x-1"><IdCard size={20} /><small>{clientname}</small></p>
+                <p className="flex space-x-1"><Phone size={20} /><small>{clientphone}</small></p>
+                <p className="flex space-x-1"><AtSign size={20} /><small>{clientemail}</small></p>
                 <Button>Credit Client</Button>
                 <Button>Change Client</Button>
             </div>
@@ -59,9 +106,9 @@ const Job = () => {
 
             <div className="flex flex-col space-y-1 items-center">
                 <h1 className="flex justify-center items-center space-x-1 shadow mb-2 font-bold text-center w-full"><ContactRound size={18} /><p>Agent</p></h1>
-                <p className="flex space-x-1"><AtSign size={20} /><small>jillianocasio@me.com</small></p>
-                <p className="flex space-x-1"><Phone size={20} /><small>455 664 9322</small></p>
-                <p className="flex space-x-1"><IdCard size={20} /><small>female</small></p>
+                <p className="flex space-x-1"><AtSign size={20} /><small>{proemail}</small></p>
+                <p className="flex space-x-1"><Phone size={20} /><small>{proephone}</small></p>
+                <p className="flex space-x-1"><IdCard size={20} /><small>{gender}</small></p>
                 <Image
                     src="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5cf6faaa5c883cc930bb0dca-profilePic/1711243961568.jpeg"
                     alt="pro-profile-img"
