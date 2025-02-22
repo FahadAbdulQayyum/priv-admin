@@ -1,6 +1,6 @@
 "use client";
 
-import CustomCategory from '@/components/CustomCategory';
+// import CustomCategory from '@/components/CustomCategory';
 import Image from 'next/image';
 import { RiLoader3Fill } from "react-icons/ri";
 import { useRouter } from 'next/navigation';
@@ -433,7 +433,7 @@ const Products = () => {
 
             <div className="flex flex-col md:flex-row gap-6 py-5">
                 <div className="w-full md:w-1/4">
-                    <CustomCategory />
+                    {/* <CustomCategory /> */}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                     {data.map((product: ProductType) => (
