@@ -30,10 +30,10 @@ export default function RootLayout({
       <body className={myfont.className}>
         <Providers>
           <span className="relative">
-            {/* <span className="fixed top-0 left-0 right-0 z-50">
+            <span className="fixed top-0 left-0 right-0 z-50">
               <UpperBanner />
               <Navbar />
-            </span> */}
+            </span>
             <div className="mt-24">
               {children}
             </div>
