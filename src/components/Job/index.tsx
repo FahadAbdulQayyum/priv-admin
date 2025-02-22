@@ -15,6 +15,7 @@ const Job = () => {
             className="flex space-x-3 bg-white overflow-hidden overflow-x-auto scrollbar-hide p-2 items-stretch"
         >
             <div className="flex flex-col space-y-1">
+                <h1 className="shadow mb-2 font-bold text-center w-full">ID</h1>
                 <Button>Reassign Job</Button>
                 <Button>Agent Cancel</Button>
                 <Button>Agent Cancel w FMAP</Button>
@@ -28,6 +29,7 @@ const Job = () => {
             <Separator orientation="vertical" />
 
             <div className="flex flex-col space-y-1 items-center">
+                <h1 className="shadow mb-2 font-bold text-center w-full">Price</h1>
                 <p>Svcs:$180</p>
                 <p>Est Tip: $30</p>
                 <p>Est PF: $24</p>
@@ -42,6 +44,7 @@ const Job = () => {
             <Separator orientation="vertical" />
 
             <div className="flex flex-col space-y-1 items-center">
+                <h1 className="shadow mb-2 font-bold text-center w-full">Client</h1>
                 <p>Ava DeSena</p>
                 <p>643 345 4456</p>
                 <p>adsena88@gmail.com</p>
@@ -54,6 +57,7 @@ const Job = () => {
             {/* <div className="flex h-full items-stretch"> */}
 
             <div className="flex flex-col space-y-1 items-center">
+                <h1 className="shadow mb-2 font-bold text-center w-full">Agent</h1>
                 <p>jillianocasio@me.com</p>
                 <p>female</p>
                 <Image
@@ -71,6 +75,7 @@ const Job = () => {
             <Separator orientation="vertical" />
 
             <div className="flex flex-col space-y-1 items-center">
+                <h1 className="shadow mb-2 font-bold text-center w-full">Job Time</h1>
                 <p>February 21 2025 8:30 AM</p>
                 <label>Change Day:</label>
                 <select className="border p-1 rounded">
@@ -98,6 +103,18 @@ const Job = () => {
             <Separator orientation="vertical" />
 
             <div className="flex flex-col space-y-1 items-center">
+                <h1 className="shadow mb-2 font-bold text-center w-full">Services</h1>
+                <p>Haircut: Women's Haircut with</p>
+                <p>Blowout - $105 X 1</p>
+                <p>Entrance on 25th St</p>
+                <p>between L and M</p>
+                <Button>Manage Services</Button>
+            </div>
+
+            <Separator orientation="vertical" />
+
+            <div className="flex flex-col space-y-1 items-center">
+                <h1 className="shadow mb-2 font-bold text-center w-full">Address</h1>
                 <p>1 Grand Cypress Blvd Orlando FL 32836 undefined</p>
                 <Button>Change Addr</Button>
                 <Button>Block User</Button>
@@ -106,6 +123,7 @@ const Job = () => {
             <Separator orientation="vertical" />
 
             <div className="flex flex-col space-y-1 items-center">
+                <h1 className="shadow mb-2 font-bold text-center w-full">Fees</h1>
                 <label>Service Add On</label>
                 <input className="border p-1 rounded" />
                 <label>Travel Fee</label>
@@ -121,6 +139,7 @@ const Job = () => {
             <Separator orientation="vertical" />
 
             <div className="flex flex-col space-y-1 items-center">
+                <h1 className="shadow mb-2 font-bold text-center w-full">Last Event</h1>
                 <p>stillConfirmingPro:</p>
                 <p>2/22/2025, 3:17:51 PM</p>
             </div>
@@ -128,11 +147,12 @@ const Job = () => {
             <Separator orientation="vertical" />
 
             <div className="flex flex-col space-y-1 items-center">
+                <h1 className="shadow mb-2 font-bold text-center w-full">City</h1>
                 <p>Washington</p>
                 <p>DC</p>
             </div>
 
-        </div>
+        </div >
     )
 }
 
