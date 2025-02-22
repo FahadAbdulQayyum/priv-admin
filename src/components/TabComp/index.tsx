@@ -21,14 +21,44 @@ export function TabComp() {
         <Tabs defaultValue="jobs" className="flex px-standardSize">
             {/* Main Tabs */}
             <div className="flex flex-col">
-                <TabsList className="flex flex-col space-y-5">
+                <TabsList className="flex flex-col space-y-5 w-full w-full">
                     <TabsTrigger value="jobs">Jobs List</TabsTrigger>
                 </TabsList>
-                <TabsList className="flex flex-col space-y-5">
+                <TabsList className="flex flex-col space-y-5 w-full">
                     <TabsTrigger value="jobs1">Clients List</TabsTrigger>
                 </TabsList>
-                <TabsList className="flex flex-col space-y-5">
+                <TabsList className="flex flex-col space-y-5 w-full">
                     <TabsTrigger value="agent">Agents List</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5 w-full">
+                    <TabsTrigger value="service">Services Management</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5 w-full">
+                    <TabsTrigger value="promotion">Promotions</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5 w-full">
+                    <TabsTrigger value="giftcard">Gift Card</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5 w-full">
+                    <TabsTrigger value="review-changes">Review Changes</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5 w-full">
+                    <TabsTrigger value="live-table">Live Table</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5 w-full">
+                    <TabsTrigger value="referral">Referrals</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5 w-full">
+                    <TabsTrigger value="convos">Convos</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5 w-full">
+                    <TabsTrigger value="corporate">Corporate Accounts</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5 w-full">
+                    <TabsTrigger value="regions">Regions MGMT</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5 w-full">
+                    <TabsTrigger value="subregion">SubRegion MGMT</TabsTrigger>
                 </TabsList>
             </div>
 
@@ -108,9 +138,40 @@ export function TabComp() {
             <TabsContent value="jobs1" className="pl-4 space-y-1">
                 <Tabs defaultValue="past-jobs">
                     {/* Nested Tabs */}
-                    <TabsList className="flex space-x-5 mb-4">
-                        <TabsTrigger value="past-jobs">Past Jobs1</TabsTrigger>
-                        <TabsTrigger value="future-jobs">Future Jobs1</TabsTrigger>
+                    <TabsList className="flex space-x-5 mb-4 w-full">
+                        <TabsTrigger value="past-jobs">Clients Cancel</TabsTrigger>
+                        <TabsTrigger value="future-jobs">Future Clients</TabsTrigger>
+                    </TabsList>
+
+                    {/* Nested Tabs Content */}
+                    <TabsContent value="past-jobs" className="space-y-2">
+                        <Card>
+                            <Job />
+                        </Card>
+                        <Card>
+                            <Job />
+                        </Card>
+                    </TabsContent>
+
+                    <TabsContent value="future-jobs" className="space-y-2">
+                        <Card>
+                            <Job />
+                        </Card>
+                        <Card>
+                            <Job />
+                        </Card>
+                    </TabsContent>
+
+                </Tabs>
+            </TabsContent>
+
+            {/* Jobs Content with Nested Tabs */}
+            <TabsContent value="agent" className="pl-4 space-y-1">
+                <Tabs defaultValue="past-jobs">
+                    {/* Nested Tabs */}
+                    <TabsList className="flex space-x-5 mb-4 w-full">
+                        <TabsTrigger value="past-jobs">Agents Cancel</TabsTrigger>
+                        <TabsTrigger value="future-jobs">Future Agents</TabsTrigger>
                     </TabsList>
 
                     {/* Nested Tabs Content */}
