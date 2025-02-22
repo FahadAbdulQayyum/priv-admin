@@ -3,7 +3,7 @@
 // import FlashSale from '@/components/FlashSale'
 // import FirstLook from '@/components/FirstLook'
 // import Hero from '@/components/Hero'
-// import BendatApp from '@/components/BendatApp'
+// import PRIVApp from '@/components/PRIVApp'
 import React from 'react'
 // import Featured from '@/components/Featured'
 // import GearUp from '@/components/Gearup'
@@ -17,7 +17,7 @@ const page = () => {
   return (
     <div>
       <Admin />
-      {/* <BendatApp />
+      {/* <PRIVApp />
       <Hero />
       <FirstLook />
       <FlashSale />

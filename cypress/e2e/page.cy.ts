@@ -4,8 +4,8 @@ describe('Home Page', () => {
       const baseUrl = Cypress.config('baseUrl') || 'http://localhost:3000'; // Ensure a valid URL
       cy.visit(baseUrl);
   
-      // Check if BendatApp is rendered
-      cy.contains('BendatApp Component Text').should('exist'); // Replace with unique text or selector from BendatApp.
+      // Check if PRIVApp is rendered
+      cy.contains('PRIVApp Component Text').should('exist'); // Replace with unique text or selector from PRIVApp.
   
       // Check if Hero is rendered
       cy.contains('Hero Component Text').should('exist'); // Replace with unique text or selector from Hero.

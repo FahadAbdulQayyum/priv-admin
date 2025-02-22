@@ -5,7 +5,7 @@ describe("Sign Component", () => {
     });
 
     it("should display the sign-up form", () => {
-        cy.contains("BECOME A Bendat MEMBER").should("exist");
+        cy.contains("BECOME A PRIV MEMBER").should("exist");
         cy.get("input[placeholder='Email address']").should("exist");
         cy.get("input[placeholder='Password']").should("exist");
         cy.get("input[placeholder='First Name']").should("exist");
@@ -16,7 +16,7 @@ describe("Sign Component", () => {
     });
 
     it('should load the login page correctly', () => {
-        cy.contains('YOUR ACCOUNT FOR EVERYTHING Bendat').should('exist');
+        cy.contains('YOUR ACCOUNT FOR EVERYTHING PRIV').should('exist');
         cy.get('input[placeholder="Email address"]').should('exist');
         cy.get('input[placeholder="Password"]').should('exist');
         // cy.get('button[type="submit"]').should('exist');
@@ -37,7 +37,7 @@ describe("Sign Component", () => {
     });
 
     it("should display validation errors if required fields are empty", () => {
-        cy.contains("YOUR ACCOUNT FOR EVERYTHING Bendat").should("exist");
+        cy.contains("YOUR ACCOUNT FOR EVERYTHING PRIV").should("exist");
 
 
         // cy.contains("Join Us").click();
@@ -82,7 +82,7 @@ describe("Sign Component", () => {
 
     it("should display the sign-in form", () => {
         cy.visit("/Sign/in");
-        cy.contains("YOUR ACCOUNT FOR EVERYTHING Bendat").should("exist");
+        cy.contains("YOUR ACCOUNT FOR EVERYTHING PRIV").should("exist");
         cy.contains("Sign in").should("exist");
     });
 

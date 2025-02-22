@@ -36,7 +36,7 @@ const Cart = () => {
                                 </div>
                                 <div className="w-full md:w-[50%] space-y-2">
                                     <h1 className="font-bold">
-                                        Bendat Dri-FIT ADV TechKnit Ultra
+                                        PRIV Dri-FIT ADV TechKnit Ultra
                                     </h1>
                                     <p className="text-gray-400">
                                         Men&apos;s Short-Sleeve Running Top

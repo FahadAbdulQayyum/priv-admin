@@ -187,12 +187,15 @@ const Sign: React.FC<SignProps> = ({ signup }) => {
     return (
         <form onSubmit={sendToForm}>
             <div className="flex flex-col justify-center items-center space-y-5 p-standardSize">
-                <Image src="/assets/bg.png" alt="logo" width={100} height={100} unoptimized={true} // Disable optimization
+                <Image
+                    // src="/assets/bg.png" 
+                    src="https://priv-image-assets.s3.amazonaws.com/nwb/Logo_dark.svg"
+                    alt="logo" width={100} height={100} unoptimized={true} // Disable optimization
                 />
-                <h1 className={`font-bold text-xl text-center ${!signup ? 'w-[21%]' : 'w-full'}`}>{signup ? "BECOME A Bendat MEMBER" : "YOUR ACCOUNT FOR EVERYTHING Bendat"}</h1>
+                <h1 className={`font-bold text-xl text-center ${!signup ? 'w-[21%]' : 'w-full'}`}>{signup ? "BECOME A PRIV MEMBER" : "YOUR ACCOUNT FOR EVERYTHING PRIV"}</h1>
                 {
                     signup && <p className="text-sm text-gray-400 text-center max-w-xs mx-auto">
-                        Create your Bendat Member profile and get first access to the very best of Bendat products, inspiration, and community.
+                        Create your PRIV Member profile and get first access to the very best of PRIV products, inspiration, and community.
                     </p>
                 }
                 <input className="border p-2 w-full max-w-md" type="email" ref={emailRef} placeholder="Email address" />
@@ -205,7 +208,7 @@ const Sign: React.FC<SignProps> = ({ signup }) => {
                             <input className="border p-2 w-full max-w-md text-gray-400" type="text" ref={dobRef} placeholder="Date of Birth" />
 
                             <p className="text-sm text-gray-400 text-center w-full max-w-md">
-                                Get a Bendat Member Reward every year on your Birthday.
+                                Get a PRIV Member Reward every year on your Birthday.
                             </p>
                             <select className="border p-2 w-full max-w-md text-gray-400" ref={countryRef}>
                                 <option value="in">India</option>
@@ -250,13 +253,13 @@ const Sign: React.FC<SignProps> = ({ signup }) => {
                                 onChange={(e) => setIsCheckedEmailUpdate(e.target.checked)}
                                 ref={signUpRef} />
                             <label htmlFor="emailUpdates" className="ml-2">
-                                Sign up for emails to get updates from Bendat on products, offers, and your Member benefits
+                                Sign up for emails to get updates from PRIV on products, offers, and your Member benefits
                             </label>
                         </div>
                     )
                 }
                 <p className="text-sm text-gray-400 text-center py-2 max-w-md w-[40%]">
-                    {"By " + (signup ? "creating an account" : `logging in`)}, you agree to Bendat&apos;s{" "}
+                    {"By " + (signup ? "creating an account" : `logging in`)}, you agree to PRIV&apos;s{" "}
                     <span className="border-b">Privacy Policy</span> and <span className="border-b">Terms of Use</span>.
                 </p>
                 {loading ?

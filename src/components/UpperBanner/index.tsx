@@ -163,7 +163,7 @@ const UpperBanner = () => {
             </div>
             {/* Left Portion */}
             <div className="left-portion flex justify-center md:justify-start mb-2 md:mb-0">
-                {/* <img src="/assets/salon.png" alt="Bendat logo" className="w-10 h-10" /> */}
+                {/* <img src="/assets/salon.png" alt="PRIV logo" className="w-10 h-10" /> */}
             </div>
             {/* Right Portion */}
             <div className="right-portion w-full md:w-auto">
@@ -172,7 +172,7 @@ const UpperBanner = () => {
                     {userInfo === null ? (
                         <>
                             <li className="ml-4">
-                                <Link href="/Sign/up" aria-label="Join Bendat Membership" className="hover:underline">
+                                <Link href="/Sign/up" aria-label="Join PRIV Membership" className="hover:underline">
                                     Join Us
                                 </Link>
                             </li>
@@ -185,7 +185,7 @@ const UpperBanner = () => {
                     ) : (
                         <>
                             <li className="ml-4">
-                                <Link href="#" aria-label="Join Bendat Membership" className="hover:underline">
+                                <Link href="#" aria-label="Join PRIV Membership" className="hover:underline">
                                     Welcome, {userInfo?.firstname}!
                                 </Link>
                             </li>

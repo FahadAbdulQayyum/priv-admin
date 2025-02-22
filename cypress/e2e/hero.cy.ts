@@ -10,7 +10,7 @@ describe("Hero Component", () => {
 
   it("should display hero title and description", () => {
     cy.contains("Welcome to Our Store").should("exist");
-    cy.contains("Explore the latest collection of Bendat Fashion").should(
+    cy.contains("Explore the latest collection of PRIV Fashion").should(
       "exist"
     );
   });

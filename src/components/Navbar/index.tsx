@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
                 <Image
                     // src="/assets/bg.png" 
                     src="https://priv-image-assets.s3.amazonaws.com/nwb/Logo_dark.svg"
-                    alt="bendat Logo"
+                    alt="PRIV Logo"
                     width={80}
                     height={80}
                     unoptimized={true} // Disable optimization

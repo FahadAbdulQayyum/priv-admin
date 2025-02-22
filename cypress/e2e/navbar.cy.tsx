@@ -5,7 +5,7 @@ describe("Navbar Component", () => {
     });
 
     it("should display the logo", () => {
-        cy.get("img[alt='bendat Logo']").should("exist");
+        cy.get("img[alt='PRIV Logo']").should("exist");
     });
 
     it("should toggle the menu on mobile", () => {
