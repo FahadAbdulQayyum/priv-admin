@@ -119,8 +119,8 @@ const Promotion: React.FC<JobProps> = ({
 
             <div className="flex flex-col space-y-1 items-center w-full">
                 <h1 className="flex justify-center items-center space-x-1 shadow mb-2 font-bold text-center w-full text-sm whitespace-nowrap"><MapPin size={18} /><p>Actions</p></h1>
-                <Button className="bg-green-400">Add Promo</Button>
-                <Button className="bg-red-300">Remove</Button>
+                <Button className="bg-green-600">Add Promo</Button>
+                <Button className="bg-red-600">Remove</Button>
             </div>
 
 
