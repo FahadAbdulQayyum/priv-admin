@@ -9,6 +9,7 @@ import { dataType, DynamicAPI, fetchDynamicAPIs } from '@/components/lib/feature
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Separator } from '@/components/ui/separator';
+import { Switch } from '@/components/ui/switch';
 
 
 interface JobProps {
@@ -24,6 +25,7 @@ interface JobProps {
     gender?: string;
     status?: "offline" | "online";
     proimage?: string; // Optional image prop
+    offered?: boolean; // Optional image prop
 }
 
 const Services: React.FC<JobProps> = ({
@@ -41,6 +43,7 @@ const Services: React.FC<JobProps> = ({
     gender = "female",
     status = "offline",
     proimage = "https://via.placeholder.com/150", // Default placeholder image
+offered=true
 }) => {
     return (
         <div
@@ -70,6 +73,7 @@ const Services: React.FC<JobProps> = ({
                 <p className="flex space-x-1"><IdCard size={20} /><small>{gender}</small></p> */}
                 {/* <p className="flex space-x-1"><Clock size={20} /><small>05/07/2020</small></p> */}
                 <p className="flex space-x-1"> <Calendar size={20} className="w-5 h-5 text-blue-500" /><small>05/07/2020</small></p>
+                <Switch id="currently-offered" checked={offered} />
             </div>
             <div className="flex flex-col space-y-1">
                 {variations?.map((v, index) => <p key={index} className="flex space-x-1">{v === "Add More" ? <Button><Plus size={20} /><small>{v}</small></Button> : <><Component size={20} /><small>{v}</small></>}</p>

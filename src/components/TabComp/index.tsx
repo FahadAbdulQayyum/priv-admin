@@ -24,7 +24,7 @@ export function TabComp() {
         <Tabs defaultValue="jobs" className="flex px-standardSize">
             {/* Main Tabs */}
             <div className="flex flex-col">
-                <TabsList className="flex flex-col space-y-5 w-full w-full">
+                <TabsList className="flex flex-col space-y-5 w-full">
                     <TabsTrigger value="jobs">Jobs List</TabsTrigger>
                 </TabsList>
                 <TabsList className="flex flex-col space-y-5 w-full">
@@ -301,6 +301,7 @@ export function TabComp() {
                             "Customized Personal Training",
                             "Add More"]}
                         servicename="Workout"
+                        offered={true}
                         clientphone="435 748 9883"
                         clientemail="a@gmail.com"
                         proemail="tester@me.com"
@@ -320,6 +321,7 @@ export function TabComp() {
                             "Customized Personal Training",
                             "Add More"]}
                         servicename="Ear Piercing"
+                        offered={true}
                         clientphone="435 748 9883"
                         clientemail="a@gmail.com"
                         proname="Tester Cheap"
@@ -328,6 +330,27 @@ export function TabComp() {
                         gender="female"
                         status="online"
                         proimage="https://priv-service-photos-q3-2018.s3.amazonaws.com/R4_SERVICES+2/291x371/JPEGS/PRIV_Ear_Piercing_291x371_R3.jpg"
+                    />
+                </Card>
+                <Card>
+                    <Services
+                        svcs="$180"
+                        payout="$244"
+                        variations={[
+                            "Hollywood Halloween",
+                            "Facial Halloween",
+                            "Kid Halloween",
+                            "Add More"]}
+                        servicename="Halloween"
+                        offered={false}
+                        clientphone="435 748 9883"
+                        clientemail="a@gmail.com"
+                        proname="Tester Cheap"
+                        proemail="testeress@me.com"
+                        proephone="434 845 8738"
+                        gender="female"
+                        status="online"
+                        proimage="https://service-variation-images.s3.amazonaws.com/services/Halloween+Services/hair-cosplay-wig-application.jpg"
                     />
                 </Card>
             </TabsContent>
@@ -417,7 +440,7 @@ export function TabComp() {
 
                     {/* Nested Tabs Content */}
                     <TabsContent value="past-jobs" className="space-y-2">
-                        <Card>
+                        <Card className="h-32 bg-orange-300">
                             <Promotion
                                 svcs="0hyreH"
                                 payout="4"
@@ -441,6 +464,7 @@ export function TabComp() {
                                 proemail="picaso@me.com"
                                 proephone="434 845 8738"
                                 gender="female"
+
                                 proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-66e8f7be8af69f381a61d445-profilePic/1737308490559.jpeg"
                             />
                         </Card>
