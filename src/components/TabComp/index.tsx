@@ -19,6 +19,25 @@ import Client from "../Client"
 import Services from "../Services"
 import Promotion from "../Promotion"
 
+import {
+    ResponsiveContainer,
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    Legend,
+} from "recharts";
+
+
+// Sample Data for Charts
+const jobData = [
+    { name: "Today", jobs: 195 },
+    { name: "Tomorrow", jobs: 44 },
+    { name: "Yesterday", jobs: 44 },
+]
+
 export function TabComp() {
     return (
         <Tabs defaultValue="jobs" className="flex px-standardSize">
@@ -62,6 +81,9 @@ export function TabComp() {
                 </TabsList>
                 <TabsList className="flex flex-col space-y-5 w-full">
                     <TabsTrigger value="subregion">SubRegion MGMT</TabsTrigger>
+                </TabsList>
+                <TabsList className="flex flex-col space-y-5 w-full">
+                    <TabsTrigger value="job-graph">Graph</TabsTrigger>
                 </TabsList>
             </div>
 
@@ -499,6 +521,24 @@ export function TabComp() {
                         </Card>
                     </TabsContent>
                 </Tabs>
+            </TabsContent>
+            <TabsContent value="job-graph" className="pl-4 space-y-1">
+                <Card className="p-4">
+                    <h3 className="text-lg font-semibold mb-4">Job Overview</h3>
+                    <ResponsiveContainer width="100%" height={300}>
+                        <BarChart
+                            data={jobData}
+                            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                        >
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="name" />
+                            <YAxis />
+                            <Tooltip />
+                            <Legend />
+                            <Bar dataKey="jobs" fill="#8884d8" />
+                        </BarChart>
+                    </ResponsiveContainer>
+                </Card>
             </TabsContent>
         </Tabs>
     )
