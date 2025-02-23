@@ -421,6 +421,7 @@ export function TabComp() {
                             <Promotion
                                 svcs="0hyreH"
                                 payout="4"
+                                discountAmount="400"
                                 clientname="Senior Dsena"
                                 clientphone="435 748 9883"
                                 clientemail="senior88@gmail.com"
