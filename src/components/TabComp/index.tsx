@@ -15,6 +15,7 @@ import {
     TabsTrigger,
 } from "@/components/ui/tabs"
 import Job from "../Job"
+import Client from "../Client"
 
 export function TabComp() {
     return (
@@ -146,10 +147,30 @@ export function TabComp() {
                     {/* Nested Tabs Content */}
                     <TabsContent value="past-jobs" className="space-y-2">
                         <Card>
-                            <Job />
+                            <Client
+                                svcs="$180"
+                                payout="$244"
+                                clientname="Cheap Tester"
+                                clientphone="435 748 9883"
+                                clientemail="a@gmail.com"
+                                proemail="tester@me.com"
+                                proephone="434 845 8738"
+                                gender="male"
+                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5cf6fac15c883cc930bb112a-profilePic/1738651803597.jpeg"
+                            />
                         </Card>
                         <Card>
-                            <Job />
+                            <Client
+                                svcs="$180"
+                                payout="$244"
+                                clientname="Cheap Tester"
+                                clientphone="435 748 9883"
+                                clientemail="a@gmail.com"
+                                proemail="tester@me.com"
+                                proephone="434 845 8738"
+                                gender="male"
+                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-65c51a480709072fc9edb867-profilePic/1708439130426.jpeg"
+                            />
                         </Card>
                     </TabsContent>
 
