@@ -17,6 +17,7 @@ import {
 import Job from "../Job"
 import Client from "../Client"
 import Services from "../Services"
+import Promotion from "../Promotion"
 
 export function TabComp() {
     return (
@@ -329,6 +330,150 @@ export function TabComp() {
                         proimage="https://priv-service-photos-q3-2018.s3.amazonaws.com/R4_SERVICES+2/291x371/JPEGS/PRIV_Ear_Piercing_291x371_R3.jpg"
                     />
                 </Card>
+            </TabsContent>
+
+            {/* Jobs Content with Nested Tabs */}
+            <TabsContent value="live-table" className="pl-4 space-y-1">
+                <Tabs defaultValue="past-jobs">
+                    {/* Nested Tabs */}
+                    <TabsList className="flex space-x-5 mb-4 w-full">
+                        <TabsTrigger value="past-jobs">Today&apos;s Jobs (195)</TabsTrigger>
+                        <TabsTrigger value="future-jobs">Tomorrow&apos;s Jobs (44)</TabsTrigger>
+                        <TabsTrigger value="yesterday-jobs">Yesterday&apos;s Jobs (44)</TabsTrigger>
+                        <TabsTrigger value="cant-find-jobs">Can&apos;t find job?</TabsTrigger>
+                    </TabsList>
+
+                    {/* Nested Tabs Content */}
+                    <TabsContent value="past-jobs" className="space-y-2">
+                        <Card>
+                            <Job
+                                svcs="$180"
+                                payout="$244"
+                                clientname="Senior Dsena"
+                                clientphone="435 748 9883"
+                                clientemail="senior88@gmail.com"
+                                proemail="jilliaocasio@me.com"
+                                proephone="434 845 8738"
+                                gender="female"
+                            // proimage="female"
+                            />
+                        </Card>
+                        <Card>
+                            <Job
+                                svcs="$180"
+                                payout="$244"
+                                clientname="Yena Lost"
+                                clientphone="435 748 9883"
+                                clientemail="yena@gmail.com"
+                                proemail="picaso@me.com"
+                                proephone="434 845 8738"
+                                gender="female"
+                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-66e8f7be8af69f381a61d445-profilePic/1737308490559.jpeg"
+                            />
+                        </Card>
+                    </TabsContent>
+
+                    <TabsContent value="future-jobs" className="space-y-2">
+                        <Card>
+                            <Job
+                                svcs="$333"
+                                payout="$653"
+                                clientname="Found Well"
+                                clientphone="435 748 9883"
+                                clientemail="found@gmail.com"
+                                proemail="well@me.com"
+                                proephone="434 845 8738"
+                                gender="female"
+                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-650cbccf2002c741aea60db4-profilePic/1698173702135.jpeg"
+                            />
+                        </Card>
+                        <Card>
+                            <Job
+                                svcs="$333"
+                                payout="$653"
+                                clientname="Found Well"
+                                clientphone="435 748 9883"
+                                clientemail="found@gmail.com"
+                                proemail="well@me.com"
+                                proephone="434 845 8738"
+                                gender="female"
+                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-59e5d608acdb19d82a0e05a4-profilePic/1710826886624.jpeg"
+                            />
+                        </Card>
+                    </TabsContent>
+                </Tabs>
+            </TabsContent>
+
+            {/* Jobs Content with Nested Tabs */}
+            <TabsContent value="promotion" className="pl-4 space-y-1">
+                <Tabs defaultValue="past-jobs">
+                    {/* Nested Tabs */}
+                    <TabsList className="flex space-x-5 mb-4 w-full">
+                        <TabsTrigger value="past-jobs">Today&apos;s Jobs (195)</TabsTrigger>
+                        <TabsTrigger value="future-jobs">Tomorrow&apos;s Jobs (44)</TabsTrigger>
+                        <TabsTrigger value="yesterday-jobs">Yesterday&apos;s Jobs (44)</TabsTrigger>
+                        <TabsTrigger value="cant-find-jobs">Can&apos;t find job?</TabsTrigger>
+                    </TabsList>
+
+                    {/* Nested Tabs Content */}
+                    <TabsContent value="past-jobs" className="space-y-2">
+                        <Card>
+                            <Promotion
+                                svcs="0hyreH"
+                                payout="4"
+                                clientname="Senior Dsena"
+                                clientphone="435 748 9883"
+                                clientemail="senior88@gmail.com"
+                                proemail="jilliaocasio@me.com"
+                                proephone="434 845 8738"
+                                gender="female"
+                            // proimage="female"
+                            />
+                        </Card>
+                        <Card>
+                            <Promotion
+                                svcs="$180"
+                                payout="$244"
+                                clientname="Yena Lost"
+                                clientphone="435 748 9883"
+                                clientemail="yena@gmail.com"
+                                proemail="picaso@me.com"
+                                proephone="434 845 8738"
+                                gender="female"
+                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-66e8f7be8af69f381a61d445-profilePic/1737308490559.jpeg"
+                            />
+                        </Card>
+                    </TabsContent>
+
+                    <TabsContent value="future-jobs" className="space-y-2">
+                        <Card>
+                            <Promotion
+                                svcs="$333"
+                                payout="$653"
+                                clientname="Found Well"
+                                clientphone="435 748 9883"
+                                clientemail="found@gmail.com"
+                                proemail="well@me.com"
+                                proephone="434 845 8738"
+                                gender="female"
+                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-650cbccf2002c741aea60db4-profilePic/1698173702135.jpeg"
+                            />
+                        </Card>
+                        <Card>
+                            <Promotion
+                                svcs="$333"
+                                payout="$653"
+                                clientname="Found Well"
+                                clientphone="435 748 9883"
+                                clientemail="found@gmail.com"
+                                proemail="well@me.com"
+                                proephone="434 845 8738"
+                                gender="female"
+                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-59e5d608acdb19d82a0e05a4-profilePic/1710826886624.jpeg"
+                            />
+                        </Card>
+                    </TabsContent>
+                </Tabs>
             </TabsContent>
         </Tabs>
     )
