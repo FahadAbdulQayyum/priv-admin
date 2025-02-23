@@ -19,6 +19,13 @@ import Client from "../Client"
 import Services from "../Services"
 import Promotion from "../Promotion"
 
+import { useEffect, useState } from "react";
+
+import {
+    ArrowUp,
+    ArrowDown
+} from "lucide-react"
+
 import {
     ResponsiveContainer,
     BarChart,
@@ -35,10 +42,30 @@ import {
 const jobData = [
     { name: "Today", jobs: 195 },
     { name: "Tomorrow", jobs: 44 },
-    { name: "Yesterday", jobs: 44 },
+    { name: "Yesterday", jobs: 31 },
 ]
 
 export function TabComp() {
+
+    const [todayCount, setTodayCount] = useState(0);
+    const [tomorrowCount, setTomorrowCount] = useState(0);
+    const [yesterdayCount, setYesterdayCount] = useState(0);
+
+    // Simulate countdown effect using useEffect
+    useEffect(() => {
+        const targetToday = jobData.find((item) => item.name === "Today")?.jobs || 0;
+        const targetTomorrow = jobData.find((item) => item.name === "Tomorrow")?.jobs || 0;
+        const targetYesterday = jobData.find((item) => item.name === "Yesterday")?.jobs || 0;
+
+        const interval = setInterval(() => {
+            setTodayCount((prev) => (prev < targetToday ? prev + 1 : targetToday));
+            setTomorrowCount((prev) => (prev < targetTomorrow ? prev + 1 : targetTomorrow));
+            setYesterdayCount((prev) => (prev < targetYesterday ? prev + 1 : targetYesterday));
+        }, 20); // Adjust speed of countdown here (e.g., 20ms)
+
+        return () => clearInterval(interval); // Cleanup interval on unmount
+    }, []);
+
     return (
         <Tabs defaultValue="jobs" className="flex px-standardSize">
             {/* Main Tabs */}
@@ -538,6 +565,20 @@ export function TabComp() {
                             <Bar dataKey="jobs" fill="#8884d8" />
                         </BarChart>
                     </ResponsiveContainer>
+                </Card>
+                <Card className="flex space-x-4">
+                    <Card className="flex flex-col justify-center items-center p-4 text-center flex-1">
+                        <h4 className="text-sm font-medium text-gray-500">Today</h4>
+                        <h3 className="flex justify-center items-center text-2xl font-bold"><ArrowUp className="text-green-600" />{todayCount}</h3>
+                    </Card>
+                    <Card className="flex flex-col justify-center items-center p-4 text-center flex-1">
+                        <h4 className="text-sm font-medium text-gray-500">Tomorrow</h4>
+                        <h3 className="flex justify-center items-center text-2x l font-bold"><ArrowDown className="text-red-600" />{tomorrowCount}</h3>
+                    </Card>
+                    <Card className="flex flex-col justify-center items-center text-center flex-1">
+                        <h4 className="text-sm font-medium text-gray-500">Yesterday</h4>
+                        <h3 className="flex justify-center items-center text-2xl font-bold"><ArrowDown className="text-red-600" />{yesterdayCount}</h3>
+                    </Card>
                 </Card>
             </TabsContent>
         </Tabs>
