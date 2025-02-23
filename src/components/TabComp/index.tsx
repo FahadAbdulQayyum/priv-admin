@@ -156,6 +156,7 @@ export function TabComp() {
                                 proemail="tester@me.com"
                                 proephone="434 845 8738"
                                 gender="male"
+                                status="online"
                                 proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5cf6fac15c883cc930bb112a-profilePic/1738651803597.jpeg"
                             />
                         </Card>
@@ -166,9 +167,11 @@ export function TabComp() {
                                 clientname="Cheap Tester"
                                 clientphone="435 748 9883"
                                 clientemail="a@gmail.com"
-                                proemail="tester@me.com"
+                                proname="Tester Cheap"
+                                proemail="testeress@me.com"
                                 proephone="434 845 8738"
-                                gender="male"
+                                gender="female"
+                                status="offline"
                                 proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-65c51a480709072fc9edb867-profilePic/1708439130426.jpeg"
                             />
                         </Card>
@@ -176,10 +179,33 @@ export function TabComp() {
 
                     <TabsContent value="future-jobs" className="space-y-2">
                         <Card>
-                            <Job />
+                            <Client
+                                svcs="$180"
+                                payout="$244"
+                                clientname="Cheap Tester"
+                                clientphone="435 748 9883"
+                                clientemail="a@gmail.com"
+                                proemail="tester@me.com"
+                                proephone="434 845 8738"
+                                gender="female"
+                                status="offline"
+                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-60381ebd4cd7ef60566c9fc7-profilePic/1739003549638.jpeg"
+                            />
                         </Card>
                         <Card>
-                            <Job />
+                            <Client
+                                svcs="$180"
+                                payout="$244"
+                                clientname="Cheap Tester"
+                                clientphone="435 748 9883"
+                                clientemail="a@gmail.com"
+                                proname="Tester Cheap"
+                                proemail="testeress@me.com"
+                                proephone="434 845 8738"
+                                gender="female"
+                                status="online"
+                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5c1f038c80a72f0178fdfa19-profilePic/1665599195558.jpeg"
+                            />
                         </Card>
                     </TabsContent>
 
