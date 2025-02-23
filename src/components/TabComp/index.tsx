@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/tabs"
 import Job from "../Job"
 import Client from "../Client"
+import Services from "../Services"
 
 export function TabComp() {
     return (
@@ -285,38 +286,49 @@ export function TabComp() {
                             />
                         </Card>
                     </TabsContent>
-                    <TabsContent value="services" className="space-y-2">
-                        <Card>
-                            <Client
-                                svcs="$180"
-                                payout="$244"
-                                clientname="Cheap Tester"
-                                clientphone="435 748 9883"
-                                clientemail="a@gmail.com"
-                                proemail="tester@me.com"
-                                proephone="434 845 8738"
-                                gender="female"
-                                status="offline"
-                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-60381ebd4cd7ef60566c9fc7-profilePic/1739003549638.jpeg"
-                            />
-                        </Card>
-                        <Card>
-                            <Client
-                                svcs="$180"
-                                payout="$244"
-                                clientname="Cheap Tester"
-                                clientphone="435 748 9883"
-                                clientemail="a@gmail.com"
-                                proname="Tester Cheap"
-                                proemail="testeress@me.com"
-                                proephone="434 845 8738"
-                                gender="female"
-                                status="online"
-                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5c1f038c80a72f0178fdfa19-profilePic/1665599195558.jpeg"
-                            />
-                        </Card>
-                    </TabsContent>
                 </Tabs>
+            </TabsContent>
+
+            <TabsContent value="service" className="space-y-2">
+                <Card>
+                    <Services
+                        svcs="$180"
+                        payout="$244"
+                        variations={[
+                            "Mat Pilates",
+                            "Yoga",
+                            "Customized Personal Training",
+                            "Add More"]}
+                        servicename="Workout"
+                        clientphone="435 748 9883"
+                        clientemail="a@gmail.com"
+                        proemail="tester@me.com"
+                        proephone="434 845 8738"
+                        gender="female"
+                        status="offline"
+                        proimage="https://priv-image-assets.s3.amazonaws.com/nwb/service_fitness_text.jpg"
+                    />
+                </Card>
+                <Card>
+                    <Services
+                        svcs="$180"
+                        payout="$244"
+                        variations={[
+                            "Mat Pilates",
+                            "Yoga",
+                            "Customized Personal Training",
+                            "Add More"]}
+                        servicename="Ear Piercing"
+                        clientphone="435 748 9883"
+                        clientemail="a@gmail.com"
+                        proname="Tester Cheap"
+                        proemail="testeress@me.com"
+                        proephone="434 845 8738"
+                        gender="female"
+                        status="online"
+                        proimage="https://priv-service-photos-q3-2018.s3.amazonaws.com/R4_SERVICES+2/291x371/JPEGS/PRIV_Ear_Piercing_291x371_R3.jpg"
+                    />
+                </Card>
             </TabsContent>
         </Tabs>
     )
