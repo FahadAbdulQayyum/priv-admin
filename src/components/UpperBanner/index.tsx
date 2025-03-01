@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
-import { setLoading } from "../lib/features/loaderSlice";
+import { setLoading } from "../lib/features/loader/loaderSlice";
 
 // import getConfig from 'next/config'
 
