@@ -2,13 +2,8 @@
 
 import React, { useEffect, useState } from 'react'
 import { IdCard, Plus, Component, BadgeDollarSign, FileUser, ContactRound, Clock, Fan, MapPin, TimerReset, Building2, Phone, AtSign, Dot, Calendar } from 'lucide-react'
-import { useSelector } from "react-redux";
-import { useAppDispatch } from "@/components/lib/hooks";
-import { RootState } from '@/components/lib/store';
-import { dataType, DynamicAPI, fetchDynamicAPIs } from '@/components/lib/features/dynamicApiCall/dynamicAPISlice';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
-import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
 
 

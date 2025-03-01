@@ -12,7 +12,6 @@ import { useRouter } from "next/navigation"
 
 import { useAppDispatch } from '@/components/lib/hooks'
 import { initializeUserInfo } from "../lib/features/userInfo/userInfoSlice";
-import { URL } from "@/app/TimeBox/constant";
 
 interface SignProps {
     signup: boolean;

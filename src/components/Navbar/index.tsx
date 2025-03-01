@@ -8,37 +8,12 @@ import { MdAdminPanelSettings } from "react-icons/md";
 import { IoBagOutline } from 'react-icons/io5';
 import { IoIosContact } from "react-icons/io";
 import { HiOutlineMenuAlt3, HiX } from 'react-icons/hi';
-import { fetchServices, searchService } from '../lib/features/service/serviceSlice';
 
 import { useAppDispatch } from '@/components/lib/hooks'
 
 
 const Navbar: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-
-    const [query, setQuery] = useState("");
-
-    const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        dispatch(fetchServices()); // Fetch services when the component mounts
-    }, [dispatch]);
-
-    // const searchHandler = async (value: any) => {
-    const searchHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-
-
-        const value = e.target.value;
-        setQuery(value); // Update search query state
-
-        if (value.trim() === "") {
-            // If search field is empty, reset to all services
-            dispatch(fetchServices());
-        } else {
-            // Otherwise, filter the services based on the input
-            dispatch(searchService(value));
-        }
-    }
 
     return (
         <div className="flex justify-between items-center px-2 text-black bg-white border-b-2 py-2 md:px-standardSize sm:px-4">
@@ -87,7 +62,6 @@ const Navbar: React.FC = () => {
                     <input
                         className="bg-transparent outline-none text-sm w-32 md:w-48"
                         placeholder="Search"
-                        onChange={searchHandler}
                     />
                 </div>
 

@@ -2,10 +2,6 @@
 
 import React, { useEffect, useState } from 'react'
 import { IdCard, BadgeDollarSign, FileUser, ContactRound, Clock, Fan, MapPin, TimerReset, Building2, Phone, AtSign } from 'lucide-react'
-import { useSelector } from "react-redux";
-import { useAppDispatch } from "@/components/lib/hooks";
-import { RootState } from '@/components/lib/store';
-import { dataType, DynamicAPI, fetchDynamicAPIs } from '@/components/lib/features/dynamicApiCall/dynamicAPISlice';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Separator } from '@/components/ui/separator';
@@ -35,28 +31,6 @@ const Job: React.FC<JobProps> = ({
     proimage = "https://via.placeholder.com/150", // Default placeholder image
 }) => {
 
-    // const job = (
-    //     svcs = "$180",
-    //     payout = "$144",
-    //     clientname = "Ava Desena",
-    //     clientphone = "543 554 9821",
-    //     clientemail = "adsena88@gmail.com",
-    //     proemail = "jillianocasio@me.com",
-    //     prophone = "456 8993 234",
-    //     gender = "female",
-    //     proimg = "http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5cf6faaa5c883cc930bb0dca-profilePic/1711243961568.jpeg"
-
-    // ): {
-    //     svcs: "string"
-    //     payout: "string"
-    //     clientname: "string"
-    //     clientphone: "string"
-    //     clientemail: "string"
-    //     proemail: "string"
-    //     prophone: "string"
-    //     gender: "string"
-    // } => {
-    // const Job = () => {
     return (
         <div
             className="flex space-x-3 bg-white overflow-hidden overflow-x-auto scrollbar-hide p-2 items-stretch"
