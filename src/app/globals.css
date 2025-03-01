@@ -239,10 +239,17 @@
   }
 }
 
+/* Container for the component */
+.component-container {
+  position: relative; /* Required for absolute positioning of the loader */
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
+}
 
 /* Full-screen loader container */
 .loader-container {
   position: fixed;
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;

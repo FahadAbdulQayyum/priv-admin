@@ -37,9 +37,13 @@ import {
     Legend,
 } from "recharts";
 
-import { fetchUsers } from "../lib/features/fetchDataSlice"
+import { fetchData } from "../lib/features/fetchDataSlice"
+// import { fetchUsers } from "../lib/features/fetchDataSlice"
 import { useSelector } from "react-redux"
 import { useAppDispatch } from "../lib/hooks"
+import ClientData from "../ClientData"
+import AgentData from "../AgentData"
+import { setLoading } from "../lib/features/loader/loaderSlice"
 
 // Sample Data for Charts
 const jobData = [
@@ -56,8 +60,11 @@ export function TabComp() {
     const [tomorrowCount, setTomorrowCount] = useState(0);
     const [yesterdayCount, setYesterdayCount] = useState(0);
 
+    const [activeTab, setActiveTab] = useState<string>("jobs"); // Track the active tab
+
     const dispatch = useAppDispatch();
-    const { users, loading, error } = useSelector((state: any) => state.fetchData);
+    // const { users, loading, error } = useSelector((state: any) => state.fetchData);
+    const { data, loading, error } = useSelector((state: any) => state.fetchData);
 
     // Simulate countdown effect using useEffect
     useEffect(() => {
@@ -74,14 +81,35 @@ export function TabComp() {
         return () => clearInterval(interval); // Cleanup interval on unmount
     }, []);
 
-    useEffect(() => {
-        // Fetch users when the component mounts
-        dispatch(fetchUsers({ page: 1, limit: 20 }));
-    }, [dispatch]);
+    // useEffect(() => {
+    //     // Fetch users when the component mounts
+    //     // dispatch(fetchUsers({ page: 1, limit: 20 }));
+    //     // dispatch(fetchUsers({ page: 1, limit: 20, "Agents" }));
+    //     dispatch(fetchData({ page: 1, limit: 20, collection: "User" }));
+    // }, [dispatch]);
 
-    useEffect(() => {
-        console.log('users...', users)
-    }, [users]);
+    // useEffect(() => {
+    //     // console.log('users...', users)
+    //     console.log('data...', data)
+    // }, [data]);
+
+ // Fetch data when the active tab changes
+//  useEffect(() => {
+//     const collectionMap: { [key: string]: string } = {
+//         jobs: "Job",
+//         // clients: "User",
+//         jobs1: "User",
+//         agent: "Agent",
+//     };
+
+    // const collection = collectionMap[activeTab];
+//     if (collection) {
+//         dispatch(setLoading(true)); // Start the loader
+//         dispatch(fetchData({ page: 1, limit: 20, collection }))
+//             .then(() => dispatch(setLoading(false))) // Stop the loader after data is fetched
+//             .catch(() => dispatch(setLoading(false))); // Ensure loader stops even on error
+//     }
+// }, [activeTab, dispatch]);
 
     return (
         <Tabs defaultValue="jobs" className="flex px-standardSize">
@@ -231,26 +259,37 @@ export function TabComp() {
                         </Card>
                     })} */}
 
-{users.length === 0 ? (
-                <div>No users found</div>
-            ) : (
-                users.map((user: any) => (
-                    <Card key={user._id}>
-                        <Client
-                            svcs="$180"
-                            payout="$244"
-                            clientname={`${user.firstName} ${user.lastName}`}
-                            clientphone="435 748 9883"
-                            clientemail={user.email}
-                            proemail={user.email}
-                            proephone="434 845 8738"
-                            gender="male"
-                            status="online"
-                            proimage={user?.profilePicture || 'http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-60381ebd4cd7ef60566c9fc7-profilePic/1739003549638.jpeg'}
-                        />
-                    </Card>
-                ))
-            )}
+                    <ClientData />
+                    {/* {loading ? (
+                    <div className="loader-container">
+                        <div className="loader-background-blur"></div>
+                        <div className="loader-spinner">
+                            <div className="spinner"></div>
+                        </div>
+                    </div>
+                ) : (
+                    <ClientData />
+                )} */}
+                    {/* {data.length === 0 ? (
+                                    <div>No clients found</div>
+                                ) : (
+                                    data.map((user: any) => (
+                                        <Card key={user._id}>
+                                            <Client
+                                                svcs="$180"
+                                                payout="$244"
+                                                clientname={`${user.firstName} ${user.lastName}`}
+                                                clientphone="435 748 9883"
+                                                clientemail={user.email}
+                                                proemail={user.email}
+                                                proephone="434 845 8738"
+                                                gender="male"
+                                                status="online"
+                                                proimage={user?.profilePicture || 'http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-60381ebd4cd7ef60566c9fc7-profilePic/1739003549638.jpeg'}
+                                            />
+                                        </Card>
+                                    ))
+                                )} */}
 
                     </TabsContent>
 
@@ -276,7 +315,7 @@ export function TabComp() {
                                 clientname="Cheap Tester"
                                 clientphone="435 748 9883"
                                 clientemail="a@gmail.com"
-                                proname="Tester Cheap"
+                                proname="Tester Cheapp"
                                 proemail="testeress@me.com"
                                 proephone="434 845 8738"
                                 gender="female"
@@ -300,35 +339,44 @@ export function TabComp() {
 
                     {/* Nested Tabs Content */}
                     <TabsContent value="past-jobs" className="space-y-2">
-                        <Card>
-                            <Client
-                                svcs="$180"
-                                payout="$244"
-                                clientname="Cheap Tester"
-                                clientphone="435 748 9883"
-                                clientemail="a@gmail.com"
-                                proemail="tester@me.com"
-                                proephone="434 845 8738"
-                                gender="female"
-                                status="offline"
-                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-60381ebd4cd7ef60566c9fc7-profilePic/1739003549638.jpeg"
-                            />
-                        </Card>
-                        <Card>
-                            <Client
-                                svcs="$180"
-                                payout="$244"
-                                clientname="Cheap Tester"
-                                clientphone="435 748 9883"
-                                clientemail="a@gmail.com"
-                                proname="Tester Cheap"
-                                proemail="testeress@me.com"
-                                proephone="434 845 8738"
-                                gender="female"
-                                status="online"
-                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5c1f038c80a72f0178fdfa19-profilePic/1665599195558.jpeg"
-                            />
-                        </Card>
+                        {/* {data.length === 0 ? (
+                <div className="loader-container">
+                <div className="loader-background-blur"></div>
+                <div className="loader-spinner">
+                    <div className="spinner"></div>
+                </div>
+            </div>
+            ) : (
+                data.map((user: any) => (
+                    <Card key={user._id}>
+                        <Client
+                            svcs="$180"
+                            payout="$244"
+                            proname={`${user.firstName} ${user.lastName}`}
+                            clientname={`${user.firstName} ${user.lastName}`}
+                            clientphone="435 748 9883"
+                            clientemail={user.email}
+                            proemail={user.email}
+                            proephone={user.phoneNumber}
+                            gender={user.gender}
+                            createdAt={user.dateOfBirth}
+                            status="online"
+                            proimage={user?.profilePicture || 'http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-60381ebd4cd7ef60566c9fc7-profilePic/1739003549638.jpeg'}
+                        />
+                    </Card>
+                ))
+            )} */}
+            {/* {loading ? (
+                    <div className="loader-container">
+                        <div className="loader-background-blur"></div>
+                        <div className="loader-spinner">
+                            <div className="spinner"></div>
+                        </div>
+                    </div>
+                ) : (
+                    <AgentData />
+                )} */}
+            <AgentData />
                     </TabsContent>
 
                     <TabsContent value="future-jobs" className="space-y-2">
@@ -353,7 +401,7 @@ export function TabComp() {
                                 clientname="Cheap Tester"
                                 clientphone="435 748 9883"
                                 clientemail="a@gmail.com"
-                                proname="Tester Cheap"
+                                proname="Tester Cheap2"
                                 proemail="testeress@me.com"
                                 proephone="434 845 8738"
                                 gender="female"
@@ -399,7 +447,7 @@ export function TabComp() {
                         offered={true}
                         clientphone="435 748 9883"
                         clientemail="a@gmail.com"
-                        proname="Tester Cheap"
+                        proname="Tester Cheap3"
                         proemail="testeress@me.com"
                         proephone="434 845 8738"
                         gender="female"
@@ -420,7 +468,7 @@ export function TabComp() {
                         offered={false}
                         clientphone="435 748 9883"
                         clientemail="a@gmail.com"
-                        proname="Tester Cheap"
+                        proname="Tester Cheap4"
                         proemail="testeress@me.com"
                         proephone="434 845 8738"
                         gender="female"

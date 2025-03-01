@@ -20,6 +20,7 @@ interface JobProps {
     proephone?: string; // Fixed from "proephone" (typo in your usage)
     gender?: string;
     status?: "offline" | "online";
+    createdAt?: string;
     proimage?: string; // Optional image prop
 }
 
@@ -34,6 +35,7 @@ const Client: React.FC<JobProps> = ({
     proephone = "456 8993 234",
     gender = "female",
     status = "offline",
+    createdAt = "12/12/12",
     proimage = "https://via.placeholder.com/150", // Default placeholder image
 }) => {
     return (
@@ -63,7 +65,7 @@ const Client: React.FC<JobProps> = ({
                 <p className="flex space-x-1"><Phone size={20} /><small>{proephone}</small></p>
                 <p className="flex space-x-1"><IdCard size={20} /><small>{gender}</small></p>
                 {/* <p className="flex space-x-1"><Clock size={20} /><small>05/07/2020</small></p> */}
-                <p className="flex space-x-1"> <Calendar size={20} className="w-5 h-5 text-blue-500" /><small>05/07/2020</small></p>
+                <p className="flex space-x-1"> <Calendar size={20} className="w-5 h-5 text-blue-500" /><small>{createdAt}</small></p>
             </div>
 
 
