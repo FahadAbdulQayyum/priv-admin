@@ -5,15 +5,19 @@ import { useSelector } from "react-redux"
 import { useAppDispatch } from "../lib/hooks"
 import { Card } from "../ui/card";
 import Client from "../Client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { setLoading } from "../lib/features/loader/loaderSlice";
 import { RootState } from "../lib/store";
+import { Button } from "../ui/button";
 
 
 const AgentData = () => {
 
     const dispatch = useAppDispatch();
+
+    const [page, setPage] = useState(1);
+
     // const { users, loading, error } = useSelector((state: any) => state.fetchData);
     const { data, loading, error } = useSelector((state: any) => state.fetchData);
     // const isLoading = useSelector((state: RootState) => state.loading.loading);
@@ -25,9 +29,16 @@ const AgentData = () => {
         // dispatch(fetchUsers({ page: 1, limit: 20 }));
         // dispatch(fetchUsers({ page: 1, limit: 20, "Agents" }));
         dispatch(resetData());
-        dispatch(fetchData({ page: 1, limit: 20, collection: "Agent" }));
+        dispatch(fetchData({ page, limit: 20, collection: "Agent" }));
+
+        // Scroll to the top of the list after fetching new data
+        window.scrollTo({
+            top: 0, // Scroll to the top of the page
+            behavior: "smooth", // Smooth scrolling animation
+        });
+
         dispatch(setLoading(false));
-    }, [dispatch]);
+    }, [dispatch, page]);
 
     useEffect(() => {
         // console.log('users...', users)
@@ -59,12 +70,23 @@ const AgentData = () => {
                             proephone={user.phoneNumber}
                             gender={user.gender}
                             createdAt={user.dateOfBirth}
-                            status="online"
+                            // status="online"
+                            status={user.active ? "online" : "offline"}
                             proimage={user?.profilePicture || 'http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-60381ebd4cd7ef60566c9fc7-profilePic/1739003549638.jpeg'}
                         />
                     </Card>
                 ))
             )}
+                    <div
+            className="py-3 space-x-1"
+        >
+        <Button
+         >{'<'}</Button>
+        <Button
+        // onClick={()=>fetchData({ page: 2, limit: 20, collection: "User" })}
+        onClick={()=> setPage(prev => prev + 1)}
+         >{'>'}</Button>
+        </div>
     </>
 }
 
