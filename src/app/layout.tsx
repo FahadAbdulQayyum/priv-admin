@@ -9,6 +9,7 @@ import Providers from "@/components/Providers";
 import CartPopup from "@/components/cartPopup";
 
 import { Toaster } from "@/components/ui/toaster"
+import AppLoader from "@/components/AppLoader";
 
 const myfont = Inter({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
             <div className="mt-24">
               {children}
             </div>
+            <AppLoader />
             <Toaster />
             <CartPopup />
             <Footer />

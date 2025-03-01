@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useAppDispatch } from "@/components/lib/hooks";
 import { RootState } from "../lib/store";
 import { useEffect, useState } from "react";
@@ -11,6 +11,8 @@ import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+
+import { setLoading } from "@/app/store/loaderSlice";
 
 // import getConfig from 'next/config'
 
@@ -27,7 +29,7 @@ const UpperBanner = () => {
     const userInfo: UserInfo | null = useSelector((state: RootState) => state.userInfo?.userInfo);
 
     const loading = useSelector((state: RootState) => state.loading.loading);
-
+    
     const envColor =
         process.env.NEXT_PUBLIC_ENV === "DEV" || process.env.NEXT_PUBLIC_ENV === "dev"
             ? "bg-pink-600"
@@ -110,27 +112,38 @@ const UpperBanner = () => {
         return <div className="bg-primary black-black py-2 px-standardSize"></div>;
     }
 
-    const handleLogout = async () => {
-        try {
-            // Call the logout API route
-            const response = await fetch('/api/logout', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-            });
+const handleLogout = async () => {
+    // const dispatch = useAppDispatch(); // Access the dispatch function
+    // const dispatch = useDispatch(); // Access the dispatch function
 
-            if (response.ok) {
-                // Redirect to the sign-in page after logout
-                localStorage.clear();
-                dispatch(resetUserInfo());
-                router.push('/Sign/In');
-            } else {
-                alert('Failed to log out. Please try again.');
-            }
-        } catch (err) {
-            console.error('Error during logout:', err);
-            alert('An error occurred. Please try again.');
+    try {
+        // Start the loader
+        dispatch(setLoading(true));
+
+        // Call the logout API route
+        const response = await fetch('/api/logout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+            // Clear local storage and reset user info
+            localStorage.clear();
+            dispatch(resetUserInfo());
+
+            // Redirect to the sign-in page
+            router.push('/Sign/In');
+        } else {
+            alert('Failed to log out. Please try again.');
         }
-    };
+    } catch (err) {
+        console.error('Error during logout:', err);
+        alert('An error occurred. Please try again.');
+    } finally {
+        // Stop the loader regardless of success or failure
+        dispatch(setLoading(false));
+    }
+};
 
     return (
         <div className="bg-primary black-black flex flex-col md:flex-row justify-between items-center py-2 px-standardSize bg-primaryy">

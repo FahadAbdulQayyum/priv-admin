@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { makeStore, AppStore } from '../lib/store'
 
 import { initializeCount } from '../lib/features/counter/counterSlice'
+import AppLoader from '../AppLoader'
 
 //
 export default function StoreProvider({
@@ -20,5 +21,8 @@ export default function StoreProvider({
         storeRef.current.dispatch(initializeCount(count))
     }
 
-    return <Provider store={storeRef.current}>{children}</Provider>
+    return <Provider store={storeRef.current}>
+        <AppLoader/>
+        {children}
+        </Provider>
 }
