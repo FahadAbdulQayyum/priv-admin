@@ -1,11 +1,5 @@
 "use client";
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './features/counter/counterSlice';
-import cartReducer from './features/cart/cartSlice';
-import productReducer from './features/product/productSlice';
-import serviceReducer from './features/service/serviceSlice';
-import locationReducer from './features/location/locationSlice';
-// import dynamicApiCallReducer from './features/dynamicApiCall/dynamicAPISlice';
 import userInfoReducer, { UserInfoState } from './features/userInfo/userInfoSlice';
 import loaderReducer from './features/loader/loaderSlice';
 import { loadState, saveState } from './features/localStorage';
@@ -31,12 +25,6 @@ const preloadedState = loadState()
 export const makeStore = () => {
     const store = configureStore({
         reducer: {
-            cart: cartReducer,
-            counter: counterReducer,
-            location: locationReducer,
-            product: productReducer,
-            service: serviceReducer,
-            // dynamicApiCall: dynamicApiCallReducer,
             userInfo: userInfoReducer,
             loading: loaderReducer
         },
@@ -46,12 +34,6 @@ export const makeStore = () => {
     // Save the state to localStorage whenever it changes
     store.subscribe(() => {
         saveState({
-            cart: store.getState().cart,
-            counter: store.getState().counter,
-            location: store.getState().location,
-            product: store.getState().product,
-            service: store.getState().service,
-            // dynamicApiCall: store.getState().dynamicApiCall,
             userInfo: store.getState().userInfo, // Persist userInfo state
         });
     });
