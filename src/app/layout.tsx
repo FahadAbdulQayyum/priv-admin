@@ -6,7 +6,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 import Providers from "@/components/Providers";
-import CartPopup from "@/components/cartPopup";
 
 import { Toaster } from "@/components/ui/toaster"
 import AppLoader from "@/components/AppLoader";
@@ -40,7 +39,6 @@ export default function RootLayout({
             </div>
             <AppLoader />
             <Toaster />
-            <CartPopup />
             <Footer />
           </span>
         </Providers>
