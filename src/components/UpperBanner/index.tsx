@@ -25,11 +25,8 @@ const UpperBanner = () => {
 
     const [isHydrated, setIsHydrated] = useState(false); // Ensure hydration before accessing localStorage
     const [isFetched, setIsFetched] = useState(false); // Track if data fetching is complete
-    const [loaderWidth, setLoaderWidth] = useState(0);
     const userInfo: UserInfo | null = useSelector((state: RootState) => state.userInfo?.userInfo);
 
-    const loading = useSelector((state: RootState) => state.loading.loading);
-    
     const envColor =
         process.env.NEXT_PUBLIC_ENV === "DEV" || process.env.NEXT_PUBLIC_ENV === "dev"
             ? "bg-pink-600"
@@ -113,9 +110,6 @@ const UpperBanner = () => {
     }
 
 const handleLogout = async () => {
-    // const dispatch = useAppDispatch(); // Access the dispatch function
-    // const dispatch = useDispatch(); // Access the dispatch function
-
     try {
         // Start the loader
         dispatch(setLoading(true));
@@ -147,17 +141,6 @@ const handleLogout = async () => {
 
     return (
         <div className="bg-primary black-black flex flex-col md:flex-row justify-between items-center py-2 px-standardSize bg-primaryy">
-
-            {loading && (
-                <span
-                    className="absolute top-0 left-0 h-1 bg-red-600 transition-all duration-300"
-                    style={{ width: `${loaderWidth}%` }}
-                ></span>
-            )}
-            {/* <div
-                className="bg-white text-black text-xl fixed bottom-0 right-0 border-l-4 border-orange-400"
-            >{process.env.NEXT_PUBLIC_ENV}
-            </div> */}
             <div className="fixed top-2 -right-6">
                 {!isOpen && (
                     <Button onClick={() => setIsOpen(true)} className={`${envColor} text-white hover:${envColor}`}>                        |
