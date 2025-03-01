@@ -37,6 +37,9 @@ import {
     Legend,
 } from "recharts";
 
+import { fetchUsers } from "../lib/features/fetchDataSlice"
+import { useSelector } from "react-redux"
+import { useAppDispatch } from "../lib/hooks"
 
 // Sample Data for Charts
 const jobData = [
@@ -45,11 +48,16 @@ const jobData = [
     { name: "Yesterday", jobs: 31 },
 ]
 
+
+
 export function TabComp() {
 
     const [todayCount, setTodayCount] = useState(0);
     const [tomorrowCount, setTomorrowCount] = useState(0);
     const [yesterdayCount, setYesterdayCount] = useState(0);
+
+    const dispatch = useAppDispatch();
+    const { users, loading, error } = useSelector((state: any) => state.fetchData);
 
     // Simulate countdown effect using useEffect
     useEffect(() => {
@@ -65,6 +73,15 @@ export function TabComp() {
 
         return () => clearInterval(interval); // Cleanup interval on unmount
     }, []);
+
+    useEffect(() => {
+        // Fetch users when the component mounts
+        dispatch(fetchUsers({ page: 1, limit: 20 }));
+    }, [dispatch]);
+
+    useEffect(() => {
+        console.log('users...', users)
+    }, [users]);
 
     return (
         <Tabs defaultValue="jobs" className="flex px-standardSize">
@@ -197,13 +214,14 @@ export function TabComp() {
 
                     {/* Nested Tabs Content */}
                     <TabsContent value="past-jobs" className="space-y-2">
+                            {/* {users.map((user: any) => {
                         <Card>
-                            <Client
+                                <Client
                                 svcs="$180"
                                 payout="$244"
-                                clientname="Cheap Tester"
+                                clientname={user.firstName + user.lastName}
                                 clientphone="435 748 9883"
-                                clientemail="a@gmail.com"
+                                clientemail={user.email}
                                 proemail="tester@me.com"
                                 proephone="434 845 8738"
                                 gender="male"
@@ -211,21 +229,29 @@ export function TabComp() {
                                 proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5cf6fac15c883cc930bb112a-profilePic/1738651803597.jpeg"
                             />
                         </Card>
-                        <Card>
-                            <Client
-                                svcs="$180"
-                                payout="$244"
-                                clientname="Cheap Tester"
-                                clientphone="435 748 9883"
-                                clientemail="a@gmail.com"
-                                proname="Tester Cheap"
-                                proemail="testeress@me.com"
-                                proephone="434 845 8738"
-                                gender="female"
-                                status="offline"
-                                proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-65c51a480709072fc9edb867-profilePic/1708439130426.jpeg"
-                            />
-                        </Card>
+                    })} */}
+
+{users.length === 0 ? (
+                <div>No users found</div>
+            ) : (
+                users.map((user: any) => (
+                    <Card key={user._id}>
+                        <Client
+                            svcs="$180"
+                            payout="$244"
+                            clientname={`${user.firstName} ${user.lastName}`}
+                            clientphone="435 748 9883"
+                            clientemail={user.email}
+                            proemail={user.email}
+                            proephone="434 845 8738"
+                            gender="male"
+                            status="online"
+                            proimage={user?.profilePicture || 'http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-60381ebd4cd7ef60566c9fc7-profilePic/1739003549638.jpeg'}
+                        />
+                    </Card>
+                ))
+            )}
+
                     </TabsContent>
 
                     <TabsContent value="future-jobs" className="space-y-2">

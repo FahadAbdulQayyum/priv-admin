@@ -2,6 +2,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import userInfoReducer, { UserInfoState } from './features/userInfo/userInfoSlice';
 import loaderReducer from './features/loader/loaderSlice';
+import fetchDataReducer from './features/fetchDataSlice';
 import { loadState, saveState } from './features/localStorage';
 
 // Load persisted state from localStorage
@@ -26,7 +27,8 @@ export const makeStore = () => {
     const store = configureStore({
         reducer: {
             userInfo: userInfoReducer,
-            loading: loaderReducer
+            loading: loaderReducer,
+            fetchData: fetchDataReducer,
         },
         preloadedState, // Initialize store with persisted state
     });
