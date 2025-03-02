@@ -16,6 +16,10 @@ interface JobProps {
     proemail?: string;
     proephone?: string; // Fixed from "proephone" (typo in your usage)
     gender?: string;
+    service?: string;
+    state?: string;
+    serviceDetail?: string;
+    createdAt?: string;
     proimage?: string; // Optional image prop
 }
 
@@ -28,6 +32,10 @@ const Job: React.FC<JobProps> = ({
     proemail = "jillianocasio@me.com",
     proephone = "456 8993 234",
     gender = "female",
+    service = "Makeup",
+    serviceDetail = "Makeup for a wedding",
+    state = "state",
+    createdAt = "12/12/12",
     proimage = "https://via.placeholder.com/150", // Default placeholder image
 }) => {
 
@@ -100,7 +108,8 @@ const Job: React.FC<JobProps> = ({
 
             <div className="flex flex-col space-y-1 items-center">
                 <h1 className="flex justify-center items-center space-x-1 shadow mb-2 font-bold text-center w-full"><Clock size={18} /><p>Job Time</p></h1>
-                <p>February 21 2025 8:30 AM</p>
+                {/* <p>February 21 2025 8:30 AM</p> */}
+                <p>{createdAt}</p>
                 <label>Change Day:</label>
                 <select className="border p-1 rounded">
                     <option value="e" selected></option>
@@ -128,8 +137,9 @@ const Job: React.FC<JobProps> = ({
 
             <div className="flex flex-col space-y-1 items-center">
                 <h1 className="flex justify-center items-center space-x-1 shadow mb-2 font-bold text-center w-full"><Fan size={18} /><p>Services</p></h1>
-                <p>Haircut: Women&apos;s Haircut with</p>
-                <p>Blowout - $105 X 1</p>
+                {/* <p>Haircut: Women&apos;s Haircut with</p> */}
+                <p>{service}</p>
+                <p>{serviceDetail}</p>
                 <p>Entrance on 25th St</p>
                 <p>between L and M</p>
                 <Button>Manage Services</Button>
@@ -164,7 +174,7 @@ const Job: React.FC<JobProps> = ({
 
             <div className="flex flex-col space-y-1 items-center">
                 <h1 className="flex justify-center items-center space-x-1 shadow mb-2 font-bold text-center w-full"><TimerReset size={18} /><p>Last Event</p></h1>
-                <p>stillConfirmingPro:</p>
+                <p>{state}</p>
                 <p>2/22/2025, 3:17:51 PM</p>
             </div>
 

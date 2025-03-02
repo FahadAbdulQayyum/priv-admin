@@ -52,7 +52,7 @@ const JobData = () => {
             data.map((user: any) => (
                 <Card key={user._id}>
                     <Job
-                        svcs="$180"
+                        svcs={user?.price}
                         payout="$2404"
                         clientname={user?.client?.firstName + " " + user?.client?.lastName}
                         // clientname={user?.Services}
@@ -61,6 +61,10 @@ const JobData = () => {
                         proemail={user?.agent?.email}
                         proephone={user?.agent?.phoneNumber}
                         gender="female"
+                        service={user?.services[0]?.name}
+                        serviceDetail={user?.services[0]?.selectedServiceVariation?.name}
+                        state={user?.state}
+                        createdAt={user?.createdAt?.slice(0,10)}
                         proimage={user?.agent?.profilePicture}
                             />
                 </Card>
