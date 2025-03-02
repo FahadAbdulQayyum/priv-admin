@@ -75,8 +75,14 @@ const ClientData = () => {
         <div
             className="py-3 space-x-1"
         >
+        {/* {page > 1 && ( */}
         <Button
-         >{'<'}</Button>
+            onClick={() => setPage((prev) => prev - 1)}
+            disabled={page <= 1} // Disable the button if page is less than or equal to 1
+        >
+            {'<'}
+        </Button>
+        {/* )} */}
         <Button
         // onClick={()=>fetchData({ page: 2, limit: 20, collection: "User" })}
         onClick={()=> setPage(prev => prev + 1)}

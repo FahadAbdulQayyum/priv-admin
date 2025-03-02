@@ -80,8 +80,9 @@ const AgentData = () => {
                     <div
             className="py-3 space-x-1"
         >
-        <Button
-         >{'<'}</Button>
+        {page>1 && <Button
+        onClick={()=> setPage(prev => prev - 1)}
+         >{'<'}</Button>}
         <Button
         // onClick={()=>fetchData({ page: 2, limit: 20, collection: "User" })}
         onClick={()=> setPage(prev => prev + 1)}
