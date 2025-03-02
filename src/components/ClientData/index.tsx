@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { setLoading } from "../lib/features/loader/loaderSlice";
 import { RootState } from "../lib/store";
 import { Button } from "../ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 
 const ClientData = () => {
@@ -80,13 +81,16 @@ const ClientData = () => {
             onClick={() => setPage((prev) => prev - 1)}
             disabled={page <= 1} // Disable the button if page is less than or equal to 1
         >
-            {'<'}
+            <ChevronLeft />
         </Button>
         {/* )} */}
         <Button
         // onClick={()=>fetchData({ page: 2, limit: 20, collection: "User" })}
         onClick={()=> setPage(prev => prev + 1)}
-         >{'>'}</Button>
+         >
+            <ChevronRight />
+            
+         </Button>
         </div>
     </>
 }
