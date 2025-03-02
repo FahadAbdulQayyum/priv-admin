@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { setLoading } from "../lib/features/loader/loaderSlice";
 import { RootState } from "../lib/store";
 import { Button } from "../ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 
 const AgentData = () => {
@@ -82,11 +83,15 @@ const AgentData = () => {
         >
         {page>1 && <Button
         onClick={()=> setPage(prev => prev - 1)}
-         >{'<'}</Button>}
+         >
+            <ChevronLeft />
+            </Button>}
         <Button
         // onClick={()=>fetchData({ page: 2, limit: 20, collection: "User" })}
         onClick={()=> setPage(prev => prev + 1)}
-         >{'>'}</Button>
+         >
+            <ChevronRight />
+         </Button>
         </div>
     </>
 }
