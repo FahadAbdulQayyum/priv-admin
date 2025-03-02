@@ -84,7 +84,8 @@ const Job: React.FC<JobProps> = ({
                 <p className="flex space-x-1"><Phone size={20} /><small>{proephone}</small></p>
                 <p className="flex space-x-1"><IdCard size={20} /><small>{gender}</small></p>
                 <Image
-                    src="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5cf6faaa5c883cc930bb0dca-profilePic/1711243961568.jpeg"
+                    src={proimage}
+                    // src="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-5cf6faaa5c883cc930bb0dca-profilePic/1711243961568.jpeg"
                     alt="pro-profile-img"
                     height={40}
                     width={40}

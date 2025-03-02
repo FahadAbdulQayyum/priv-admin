@@ -32,6 +32,7 @@ import { useSelector } from "react-redux"
 import { useAppDispatch } from "../lib/hooks"
 import ClientData from "../ClientData"
 import AgentData from "../AgentData"
+import JobData from "../JobData"
 
 // Sample Data for Charts
 const jobData = [
@@ -124,11 +125,12 @@ export function TabComp() {
 
                     {/* Nested Tabs Content */}
                     <TabsContent value="past-jobs" className="space-y-2">
-                        <Card>
+                        <JobData />
+                        {/* <Card>
                             <Job
                                 svcs="$180"
                                 payout="$244"
-                                clientname="Senior Dsena"
+                                clientname="Senior Dsenaaa"
                                 clientphone="435 748 9883"
                                 clientemail="senior88@gmail.com"
                                 proemail="jilliaocasio@me.com"
@@ -148,7 +150,7 @@ export function TabComp() {
                                 gender="female"
                                 proimage="http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-66e8f7be8af69f381a61d445-profilePic/1737308490559.jpeg"
                             />
-                        </Card>
+                        </Card> */}
                     </TabsContent>
 
                     <TabsContent value="future-jobs" className="space-y-2">
