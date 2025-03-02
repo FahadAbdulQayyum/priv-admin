@@ -8,7 +8,6 @@ import Client from "../Client";
 import { useEffect, useState } from "react";
 
 import { setLoading } from "../lib/features/loader/loaderSlice";
-import { RootState } from "../lib/store";
 import { Button } from "../ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -19,16 +18,10 @@ const AgentData = () => {
 
     const [page, setPage] = useState(1);
 
-    // const { users, loading, error } = useSelector((state: any) => state.fetchData);
     const { data, loading, error } = useSelector((state: any) => state.fetchData);
-    // const isLoading = useSelector((state: RootState) => state.loading.loading);
 
     useEffect(() => {
-        // Start the loader
         dispatch(setLoading(true));
-        // Fetch users when the component mounts
-        // dispatch(fetchUsers({ page: 1, limit: 20 }));
-        // dispatch(fetchUsers({ page: 1, limit: 20, "Agents" }));
         dispatch(resetData());
         dispatch(fetchData({ page, limit: 20, collection: "Agent" }));
 
@@ -41,16 +34,8 @@ const AgentData = () => {
         dispatch(setLoading(false));
     }, [dispatch, page]);
 
-    useEffect(() => {
-        // console.log('users...', users)
-        console.log('agent - data...', data)
-    }, [data]);
-
-
     return <>
-        {/* {(data.length === 0||isLoading) ? ( */}
         {data.length === 0 ? (
-                // <div>No agents found</div>
                 <div className="loader-container">
                 <div className="loader-background-blur"></div>
                 <div className="loader-spinner">
@@ -71,7 +56,6 @@ const AgentData = () => {
                             proephone={user.phoneNumber}
                             gender={user.gender}
                             createdAt={user.dateOfBirth}
-                            // status="online"
                             status={user.active ? "online" : "offline"}
                             proimage={user?.profilePicture || 'http://sj082i.cloudimg.io/s/resize/200/https://agent-headshot.s3.us-west-2.amazonaws.com/Photo-60381ebd4cd7ef60566c9fc7-profilePic/1739003549638.jpeg'}
                         />
@@ -87,7 +71,6 @@ const AgentData = () => {
             <ChevronLeft />
             </Button>}
         <Button
-        // onClick={()=>fetchData({ page: 2, limit: 20, collection: "User" })}
         onClick={()=> setPage(prev => prev + 1)}
          >
             <ChevronRight />

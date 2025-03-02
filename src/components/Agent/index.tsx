@@ -1,14 +1,9 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
-import { IdCard, BadgeDollarSign, FileUser, ContactRound, Clock, Fan, MapPin, TimerReset, Building2, Phone, AtSign, Dot, Calendar } from 'lucide-react'
-import { useSelector } from "react-redux";
-import { useAppDispatch } from "@/components/lib/hooks";
-import { RootState } from '@/components/lib/store';
+import React from 'react'
+import { IdCard, Phone, AtSign, Dot, Calendar } from 'lucide-react'
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
-import { Separator } from '@/components/ui/separator';
-
 
 interface JobProps {
     svcs?: string;
@@ -54,7 +49,6 @@ const Agent: React.FC<JobProps> = ({
                         className="rounded-full h-32 w-32 object-cover p-1 shadow-2xl"
                     />
                 </span>
-                {/* <p className="flex justify-center items-center"><Dot size={60} color={"green"} className="-mr-5" /><small>Online</small></p> */}
                 <p className="flex justify-center items-center"><Dot size={60} color={status === "online" ? "green" : "gray"} className="-mr-5" /><small>{status === "online" ? "Online" : "Offline"}</small></p>
             </span>
 
@@ -69,17 +63,12 @@ const Agent: React.FC<JobProps> = ({
 
 
             <div className="flex flex-col space-y-1">
-                {/* <h1 className="flex justify-center items-center space-x-1 shadow mb-2 font-bold text-center w-full"><IdCard size={18} /><p>ID</p></h1> */}
                 <Button>View Profile</Button>
                 <Button>View Ratings</Button>
                 <Button>Set Schedule</Button>
                 <Button>Set Password</Button>
                 <Button>Clear Schedule</Button>
             </div>
-
-            {/* <Separator orientation="vertical" /> */}
-
-
         </div >
     )
 }
