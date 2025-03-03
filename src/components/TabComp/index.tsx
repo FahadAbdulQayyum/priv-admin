@@ -17,22 +17,10 @@ import {
     ArrowDown
 } from "lucide-react"
 
-import {
-    ResponsiveContainer,
-    BarChart,
-    Bar,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    Legend,
-} from "recharts";
-
-import { useSelector } from "react-redux"
-import { useAppDispatch } from "../lib/hooks"
 import ClientData from "../ClientData"
 import AgentData from "../AgentData"
 import JobData from "../JobData"
+import Graph from "../Graph"
 
 // Sample Data for Charts
 const jobData = [
@@ -40,7 +28,6 @@ const jobData = [
     { name: "Tomorrow", jobs: 44 },
     { name: "Yesterday", jobs: 31 },
 ]
-
 
 
 export function TabComp() {
@@ -473,22 +460,9 @@ export function TabComp() {
                 </Tabs>
             </TabsContent>
             <TabsContent value="job-graph" className="pl-4 space-y-1">
-                <Card className="p-4">
-                    <h3 className="text-lg font-semibold mb-4">Job Overview</h3>
-                    <ResponsiveContainer width="100%" height={300}>
-                        <BarChart
-                            data={jobData}
-                            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-                        >
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="name" />
-                            <YAxis />
-                            <Tooltip />
-                            <Legend />
-                            <Bar dataKey="jobs" fill="#8884d8" />
-                        </BarChart>
-                    </ResponsiveContainer>
-                </Card>
+                
+            <Graph />
+
                 <Card className="flex space-x-4">
                     <Card className="flex flex-col justify-center items-center p-4 text-center flex-1">
                         <h4 className="text-sm font-medium text-gray-500">Today</h4>
