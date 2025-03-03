@@ -22,7 +22,13 @@ const JobData = () => {
         // Start the loader
         dispatch(setLoading(true));
         dispatch(resetData());
-        dispatch(fetchData({ page, limit: 10, collection: "Job" }));
+        dispatch(fetchData({ page, limit: 10, collection: "Job",
+            filters: {
+                // status: "active",
+                // sortBy: "createdAt",
+                sortOrder: "desc"
+            }
+         }));
         // Scroll to the top of the list after fetching new data
         window.scrollTo({
             top: 0, // Scroll to the top of the page
